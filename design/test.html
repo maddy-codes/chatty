@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Chatbot GUI</title>
+    <title>IT Chamurai</title>
     <style>
         * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -64,8 +64,10 @@
         <div class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col bg-gray-500">
             <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center text-lalala"
                 style="background-color: #E0FBFC;">
-                <div class="header-container">
-                    <h2 class="text-2xl font-semibold text-lalala display-1">Chatbot</h2>
+                <div class="header-container flex">
+
+                    <img src="./uon_logo.png" class="">
+                    <h2 class="text-2xl font-semibold text-lalala display-1">University of Northampton</h2>
                 </div>
                 <button id="voice-button"
                     class="lalala hover:lalala text-white px-4 py-2 rounded-lg focus:outline-none">
@@ -217,8 +219,8 @@ function displayInitialGreeting() {
                     displayHTML("",
                                 `   <span class="flex-1"> 
                                         Did that answer your question?
-                                        <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 rounded-lg">Yes</button>
-                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg   ">Nah</button>
+                                        <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('Thank you for the feedback! Is there anything else that I can help you with?','bot')">Yes</button>
+                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('Thank you for the feedback! Is there anything else that I can help you with?','bot')" >No </button>
                                     </span>
                                 `,'bot')
                 } else {

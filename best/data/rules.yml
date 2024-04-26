@@ -111,7 +111,7 @@ rules:
 
 #what can be done with the ai course 
 
-- rule: give examples of what students have done in ai course and what expect, job wise 
+- rule: give examples of what students have doxsane in ai course and what expect, job wise 
   steps:
   - intent: job_pros  
   - action: utter_job_proc   
@@ -134,3 +134,7 @@ rules:
   - intent: non_uni_pricing  
   - action: utter_price_private_accoms     
  
+- rule: utter ai info
+  steps:
+  - intent: what_need_for_ai
+  - action: utter_ai_prerequisites

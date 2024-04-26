@@ -16,6 +16,7 @@ intents:
 - genarl_ai_ask
 - goodbye
 - greet
+- internships_all
 - jobs_internships
 - jobs_placement
 - modulename_or_coursename
@@ -26,21 +27,17 @@ intents:
 - user_postive_health
 - what_can_i_do_wit_ai
 - what_need_for_ai
-- internships_all
 entities:
 - ' good'
 - module
 - module_name
 - module_code
-
 slots:
   module:
     type: text
     mappings:
     - type: from_entity
       entity: module
-
-
 responses:
   utter_greet:
   - text: Hello! I'm the University of Northampton's AI course assistant. How can I help you today?
@@ -100,10 +97,8 @@ responses:
   - text: when it comes to University pricing, accommodations prices vary. I suggest checking the accommodation website for further details
   utter_student_number:
   - text: Please wirte your student number in [exactly 8 digits].
-
-
-
 actions:
+- utter_what_is_ai
 - utter_greet
 - utter_internships
 - utter_Iam_well

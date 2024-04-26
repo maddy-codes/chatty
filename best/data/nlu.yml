@@ -34,7 +34,6 @@ nlu:
     - yes that is the right answer
     - perfect
     - that is perfect
-
 - intent: time_table_ask
   examples: |
     - Please tell me about my timetable
@@ -43,13 +42,10 @@ nlu:
     - what class do i have tomorrow
     - what class do i have next week
     - what class do i have this month
-
 - intent: time_table_student_id
   examples: |
     - My student ID is: [22405755](student_number)
     - [\d{8}](student_number)
-
-
 - intent: ask_accommodation
   examples: |
     - Tell me about accommodations
@@ -509,6 +505,7 @@ nlu:
     - Entry requirements
     - Requirements
     - what will i learn if i study ai at nothampton
+    - study AI
 - intent: genarl_ai_ask
   examples: |
     - tell me what ai is
@@ -572,7 +569,7 @@ nlu:
     - help placement
     - how to apply for internships
     - how to apply for placement
-    - how to get an internship 
+    - how to get an internship
     - how to get an placement
 - intent: job_pros
   examples: |
@@ -591,18 +588,18 @@ nlu:
     - how much are accoms
     - price for accoms
     - pricing for homes
-    - accoms price 
-    - pricing for accoms 
-    - home pricing 
-    - price for living in homes 
-    - price for living in an accom 
-    - rent for accoms 
-    - renting 
-    - how much is rent 
+    - accoms price
+    - pricing for accoms
+    - home pricing
+    - price for living in homes
+    - price for living in an accom
+    - rent for accoms
+    - renting
+    - how much is rent
 - intent: accom_price_uni
   examples: |
     - pricing for halls accommodations
-    - how much is rent at uni 
+    - how much is rent at uni
     - can you tell me how much it is to rent an accom in waterside
     - can you tell me how much it is to rent an accom in stJohns
     - can you tell me how much it is to rent an accom in scohlars

@@ -65,10 +65,11 @@ stories:
   - action: utter_internships
   - action: action_get_internships
   - intent: what_need_for_ai
-  - intent: about_ai_course
-  - action: utter_ai_in_northampton
-  - intent: ask_module_info
+  - action: utter_ai_prerequisites
+
+- story: interactive_story_1
+  steps:
+  - intent: genarl_ai_ask
+  - action: utter_what_is_ai
   - intent: what_need_for_ai
-  - intent: about_ai_course
-  - action: utter_ai_in_northampton
-  - intent: what_need_for_ai
+  - action: utter_ai_prerequisites

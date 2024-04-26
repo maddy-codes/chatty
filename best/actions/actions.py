@@ -66,10 +66,10 @@ class ActionTellTime(Action):
         # Iterate backwards to find the last bot utterance
         for e in reversed(events):
             if e["event"] != "bot":
-                last_bot_response = e["text"]
+                #last_bot_response = e["text"]
                 break
 
-        return_classes = text(last_bot_response)
+        return_classes = text(2283010)
         strr = ""
         for strrr in return_classes:
             strr += "\n" + strrr
