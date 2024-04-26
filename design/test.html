@@ -84,24 +84,9 @@
     </div>
     <script>
 // BUTTONS TO BE ABLE TO CLICK
-        document.addEventListener('DOMContentLoaded', function () {
-            displayInitialOptions();
-        });
-
-        function displayInitialOptions() {
-            const options = ["AI AT NORTHAMPTON", "INTERNSHIPS", "ACCOMS", "OTHER"];
-            const select = document.createElement('select');
-            select.classList.add('p-2', 'rounded-lg', 'mb-4');
-            options.forEach(option => {
-                const opt = document.createElement('option');
-                opt.value = option;
-                opt.text = option;
-                select.appendChild(opt);
-            });
-            chatMessages.appendChild(select);
+     
 
         
-        }
 
         document.addEventListener('DOMContentLoaded', function () {
     // Display the initial greeting message and options when the page loads

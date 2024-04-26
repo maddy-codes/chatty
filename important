@@ -1,0 +1,6 @@
+Please start your server using 
+
+Rasa Core Server : - 
+    rasa run --enable-api --cors '*' -p 5005 
+Rasa Actions Server : - 
+    rasa run action
