@@ -1,0 +1,73 @@
+version: "2.0"
+stories:
+
+
+- story: ask about student life
+  steps:
+  - intent: ask_student_life
+  - action: utter_student_life_info
+  - action: utter_ask_more_questions
+
+- story: ask about visa requirements
+  steps:
+  - intent: ask_visa_requirements
+  - action: utter_visa_requirements
+  - action: utter_ask_more_questions
+
+
+- story: ask general question
+  steps:
+  - intent: ask_general_question
+  - action: action_general_question
+  - action: utter_ask_more_questions
+
+
+- story: thank and goodbye
+  steps:
+  - intent: thank
+  - action: utter_youre_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+
+  #add accom coversation next 
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+
+
+- story: story_of_timetable
+  steps:
+  - intent: time_table_ask
+  - action: utter_student_number
+  - intent: time_table_student_id
+  - action: action_tell_time
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_accommodation
+  - action: utter_ask_accommodation
+  - intent: ask_external_accommodation
+  - action: utter_non_uni_accommodation
+  - intent: bot_health
+  - action: utter_Iam_well
+  - intent: bot_health
+  - action: utter_Iam_well
+  - intent: user_postive_health
+  - action: utter_user_pos_res
+  - intent: jobs_internships
+  - action: utter_internships
+  - intent: what_need_for_ai
+  - intent: about_ai_course
+  - action: utter_ai_in_northampton
+  - intent: ask_module_info
+  - intent: what_need_for_ai
+  - intent: about_ai_course
+  - action: utter_ai_in_northampton
+  - intent: what_need_for_ai

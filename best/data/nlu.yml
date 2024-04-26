@@ -1,0 +1,614 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey
+    - Hello
+    - Good morning
+    - Good afternoon
+    - Good evening
+    - hi
+    - hey
+    - Greetings
+    - Whats up
+    - Nice to meet you
+    - Pleased to meet you
+    - Whats new
+    - Long time no see
+    - Welcome
+    - Yo
+    - Hiya
+    - Howdy
+    - Sup
+    - Cheers
+    - Salutations
+    - hello
+- intent: positve_confirmation
+  examples: |
+    - postive
+    - thats correct
+    - that is very much correct
+    - correct
+    - Thanks that helps
+    - yes that is the right answer
+    - perfect
+    - that is perfect
+
+- intent: time_table_ask
+  examples: |
+    - Please tell me about my timetable
+    - timetable
+    - tell me my timetable
+    - what class do i have tomorrow
+    - what class do i have next week
+    - what class do i have this month
+
+- intent: time_table_student_id
+  examples: |
+    - My student ID is: [22405755](student_number)
+    - [\d{8}](student_number)
+
+
+- intent: ask_accommodation
+  examples: |
+    - Tell me about accommodations
+    - What kind of accommodation options do you have?
+    - I'm looking for information on the different accommodation choices.
+    - Can you tell me more about the available accommodation
+    - I need to know about the accommodation options
+    - Please provide details on the accommodation offerings
+    - accoms
+    - i want to know about accoms
+    - i need help with accoms
+    - I'm searching for information on the various housing options that are available.
+    - Would you be able to provide me with the details about the different accommodation choices?
+    - Can you give me an overview of the assortment of accommodation alternatives that are offered?
+    - I'd appreciate if you could share specifics on the range of accommodation offerings you have.
+    - I'm curious to learn more about the diverse accommodation possibilities that students can select from.
+    - Could you please outline the details regarding the various accommodation options that exist?
+    - I would be grateful if you could describe the different types of accommodation that are available.
+    - Can you give me a rundown of the accommodation alternatives that students have access to?
+    - I'm interested in understanding the full scope of accommodation choices that are provided.
+    - Would you be able to provide me with information on the assortment of accommodation possibilities?
+    - I'd like to know more about the diverse range of accommodation options that are offered.
+    - Could you share the specifics on the different accommodation alternatives that are available?
+    - I'm hoping you can give me a comprehensive overview of the accommodation choices students have.
+    - Would you be able to elaborate on the various accommodation options that students can select from?
+    - I'd appreciate if you could provide details on the accommodation alternatives that are accessible.
+    - Can you describe the full breadth of accommodation possibilities that are offered to students?
+    - I'm curious to learn about the complete set of accommodation choices that are available.
+    - Would you be able to give me information on the accommodation options from which students can choose?
+    - I'd like to understand the entirety of accommodation alternatives that students have access to.
+    - Could you please provide me with details on the assortment of accommodation possibilities that exist?
+    - okay tell me about accoms
+- intent: ask_university_accommodation
+  examples: |
+    - Tell me about uni accoms
+    - Im interested in the accommodation provided by the university
+    - What kind of on-campus housing options do you have
+    - Can you give me information about the university's accommodation
+    - I'd like to learn more about the accommodation options through the university
+    - Please tell me about the accommodation available from the university
+    - university accommodation
+    - university
+    - uni accoms
+    - uni
+    - on campus accom
+    - on campus
+    - run by uni
+    - run by university
+    - I'd be interested in learning more about the on-campus housing options provided by the university.
+    - Can you give me information on the accommodation choices that are available through the university itself?
+    - What are the different types of university-provided accommodation that students can select from?
+    - I'm curious to understand the accommodation options that are directly offered by the university administration.
+    - Would you be able to share details on the various accommodation alternatives available via the university?
+    - I'd appreciate if you could give me an overview of the accommodation choices provided by the university.
+    - Can you outline the accommodation options that the university makes available to its students?
+    - I'd be grateful if you could elaborate on the assortment of accommodation possibilities offered through the university.
+    - I'm interested in knowing about the full range of accommodation that students can access via the university's housing program.
+    - Would you be able to provide me with information on the diverse accommodation choices available from the university?
+    - I'd like to understand the different types of accommodation that the university offers as part of its housing services.
+    - Could you please share the specifics on the accommodation alternatives provided directly by the university administration?
+    - I'm hoping you can give me a comprehensive look at the accommodation options accessible through the university's own housing facilities.
+    - Would you be able to describe the assortment of accommodation choices that students can select from via the university?
+    - I'd appreciate if you could outline the accommodation possibilities that are made available to students by the university itself.
+    - Can you provide me with details on the full breadth of accommodation options offered through the university's housing department?
+    - I'm curious to learn about the complete set of accommodation alternatives that the university provides for its students.
+    - Would you be able to share information on the diverse range of accommodation choices accessible via the university's own housing program?
+- intent: ask_waterside
+  examples: |
+    - I heard about the Waterside accommodation, can you tell me more about it
+    - What can you tell me about the Waterside student housing
+    - I'm considering the Waterside option, can you provide some details
+    - Could you describe the waterside accommodation for me
+    - Im interested in learning about the Waterside residence hall
+    - about waterside
+    - I heard about the Waterside student housing option - could you tell me more details about it?
+    - What specific information can you provide me regarding the features and details of the Waterside accommodation?
+    - I'd be interested in learning about the key aspects and characteristics of the Waterside student residence hall.
+    - Can you give me an overview of what the Waterside accommodation entails and what it offers to students?
+    - Would you be able to outline the main details about the Waterside housing option so I can better understand it?
+    - I'd appreciate if you could describe the Waterside accommodation in more depth and elaborate on what it includes.
+    - Could you give me a rundown of the Waterside student housing and the various amenities and facilities it provides?
+    - I'm considering the Waterside accommodation, so I was hoping you could provide more specifics about what it has to offer.
+    - Would you be able to share comprehensive details about the features and characteristics of the Waterside residence hall?
+    - I'd like to get a clearer picture of the Waterside accommodation, so could you tell me more about its key components?
+    - Can you elaborate on the Waterside student housing and give me a fuller understanding of the accommodations it provides?
+    - I'm curious to learn additional details about the Waterside option, so could you describe its facilities and room types in more detail?
+    - Would you be able to give me a comprehensive overview of the Waterside accommodation, including the amenities, room configurations, and other specifics?
+    - I'd appreciate if you could provide me with an in-depth rundown of what the Waterside student housing entails, such as the available room types and other features.
+    - Could you share more comprehensive information about the Waterside accommodation, including details on the living spaces, common areas, and any other noteworthy aspects?
+    - I'm hoping you can give me a thorough explanation of the Waterside student housing, covering everything from the room layouts to the on-site facilities and services.
+    - Would you be able to provide me with a detailed description of the Waterside accommodation, outlining the key characteristics and offerings that make it a viable option for students?
+    - I'd be grateful if you could give me a complete picture of the Waterside accommodation by elaborating on its various components, such as the different room configurations, amenities, and other relevant details.
+    - Can you provide me with a comprehensive look at the Waterside student housing, covering all the important aspects like room types, common areas, facilities, and any other noteworthy features?
+- intent: ask_stjones
+  examples: |
+    - What can you tell me about the Stjohnes accommodation
+    - I'd like to know more about the st johnes student housing
+    - Please provide information about the StJohns accommodation option
+    - Can you give me details on the St Johns residence hall
+    - I'm curious to learn about the St.Jones accommodation
+    - about stjohns
+    - What can you tell me about the St. Johns student accommodation?
+    - I'd like to know more details about the St. Johns housing option for students.
+    - Could you please provide information on the St. Johns accommodation choice?
+    - Can you give me specifics about the St. Johns residence hall?
+    - I'm curious to learn more about the St. Johns accommodation offering.
+    - What are the key details regarding the St. Johns student housing?
+    - I'd appreciate if you could share an overview of the St. Johns accommodation.
+    - Could you describe the St. Johns accommodation in more detail for me?
+    - What can you tell me about the features and amenities of the St. Johns housing?
+    - I'm interested in learning about the specifics of the St. Johns accommodation option.
+    - Would you be able to outline the main characteristics of the St. Johns student housing?
+    - I'd like to get a better understanding of what the St. Johns accommodation entails.
+    - Can you provide more information about the accommodations available at St. Johns?
+    - What are the important details I should know about the St. Johns housing choice?
+    - I'm hoping you can give me a comprehensive look at the St. Johns accommodation option.
+    - Could you elaborate on the key aspects of the St. Johns student housing for me?
+    - I'd appreciate if you could share comprehensive details about the St. Johns accommodation.
+    - What are the main features and offerings of the St. Johns residence hall accommodation?
+    - I'm curious to learn more about the specifics of the St. Johns housing alternative.
+    - Can you give me a thorough overview of what the St. Johns accommodation provides for students?
+- intent: ask_scholars
+  examples: |
+    - I'm looking into the Scholars accommodation, what can you tell me about it
+    - Could you describe the Scholars student housing for me
+    - What information can you provide about the Scholars accommodation
+    - I'd like to know more details on the Scholars residence option
+    - Please share details about the Scholars accommodation
+    - Scholars Green
+    - scholars green
+    - about scholars
+    - I'm looking into the Scholars accommodation, what can you tell me about it?
+    - Could you describe the Scholars student housing option for me?
+    - What information can you provide about the Scholars accommodation?
+    - I'd like to know more details on the Scholars residence option.
+    - Please share details about the Scholars accommodation.
+    - What can you tell me about the Scholars Green accommodation?
+    - I'm interested in the Scholars Green housing, what are the details?
+    - Can you give me an overview of the Scholars accommodation?
+    - I'd like to learn about the accommodation options at Scholars Green.
+    - Please provide information on the Scholars accommodation choice.
+    - What are the key features of the Scholars Green housing?
+    - I'm curious to know more about the Scholars accommodation.
+    - Could you outline the specifics of the Scholars Green housing?
+    - What should I know about the Scholars accommodation option?
+    - I'd appreciate if you could share details on the Scholars accommodation.
+    - Can you tell me about the living spaces and amenities at Scholars Green?
+    - I'm interested in the Scholars accommodation, what are the main details?
+    - What are the important things to know about the Scholars Green housing?
+    - I'd like an overview of the accommodation available at Scholars Green.
+    - Please provide more information about the Scholars accommodation choice
+- intent: ask_external_accommodation
+  examples: |
+    - Im interested in accommodation options not provided by the university
+    - not provided by the university
+    - Can you tell me about off-campus housing choices
+    - off-campus
+    - What kind of external accommodation options are available
+    - external accommodation
+    - I'd like to learn about accommodation alternatives outside the university
+    - Please provide information on accommodation options not run by the university
+    - elsewhere
+    - private accoms
+    - I'm interested in accommodation options not provided by the university.
+    - Can you tell me about off-campus housing choices?
+    - What kind of external accommodation options are available?
+    - I'd like to learn about accommodation alternatives outside the university.
+    - Please provide information on accommodation options not run by the university.
+    - Can you give me details on accommodation elsewhere, not through the uni?
+    - I'm looking for private accommodation options, not university-owned.
+    - What are the details on external accommodation choices near campus?
+    - I'd like to know about housing options that are not part of the university.
+    - Can you share information on accommodation alternatives outside of the uni?
+    - Please tell me about accommodation options that are not university-provided.
+    - I'm curious about private housing choices, not the uni's own accommodations.
+    - What can you tell me about off-campus living arrangements near the university?
+    - I'd appreciate details on accommodation selections that are independent of the uni.
+    - Can you provide an overview of external housing options available to students?
+    - I'm interested in learning about non-university affiliated accommodation possibilities.
+    - What are the details on private accommodation choices close to the university campus?
+    - I'd like information on housing options that are separate from the university's offerings.
+    - Can you share specifics about accommodation alternatives that are not managed by the uni?
+    - Please give me details on living arrangements that are external to the university's facilities.
+    - okay tell me about private accoms
+- intent: ask_student_life
+  examples: |
+    - What is student life like at the University of Northampton?
+    - What can I do in Northampton as a student?
+    - student life
+    - Student life
+    - Are there any clubs or societies I can join?
+    - What events are organized by the Students' Union?
+    - Can you tell me about the overall student experience at Northampton?
+    - What kinds of activities and events are available for students?
+    - I'd like to know more about the social and extracurricular opportunities.
+    - Please provide an overview of the typical student life at your university.
+    - What does the day-to-day student experience look like at Northampton?
+    - I'm curious to learn about the campus culture and student community.
+    - Can you share details on the clubs, societies, and other student groups?
+    - What kinds of events and programs does the Students' Union organize?
+    - I'd appreciate if you could describe the general student life at Northampton.
+    - What are some of the ways students can get involved on campus?
+    - Can you give me a sense of the overall student experience at your uni?
+    - I'd like to know more about the typical lifestyle of Northampton students.
+    - Please tell me about the vibrant student community and campus life.
+    - What kinds of recreational and social activities are available to students?
+    - I'm interested in learning about the diverse student experience at Northampton.
+    - Can you provide an overview of the extracurricular opportunities on campus?
+    - What does a day in the life of a Northampton student generally look like?
+    - I'd appreciate if you could share details on the student community and culture.
+    - Can you describe the range of clubs, societies, and events for students to join?
+- intent: ask_visa_requirements
+  examples: |
+    - Do I need a visa to study at Northampton?
+    - What type of visa is required for international students?
+    - How do I apply for a student visa?
+    - Is there any support for visa applications?
+- intent: ask_module_info
+  examples: |
+    - Can you tell me about the [Fundamentals of AI](module) module?
+    - What will I learn in [Applied Machine Learning](module)?
+    - How is the [Robotics](module) module assessed?
+    - What are the learning outcomes for [Knowledge Representation and Reasoning](module)?
+- intent: modulename_or_coursename
+  examples: |
+    - [Relational Databases](module_name)
+    - Module name is [Relational databases](module_name)
+    - Module name is [Artificial Intelligence Fundamentals](module_name)
+- intent: ask_general_question
+  examples: |
+    - How do I contact the admissions team?
+    - When does the academic year start?
+    - Are there any scholarships available for AI students?
+    - What careers can I pursue with an AI degree?
+- intent: thank
+  examples: |
+    - Thanks
+    - Thank you
+    - That's helpful
+    - Appreciate the information
+    - Cheers
+    - Much obliged
+    - I appreciate that
+    - Thank you kindly
+    - Gratitude
+    - Many thanks
+    - I'm grateful
+    - Thankful
+    - Bless you
+    - Merci
+    - Gracias
+    - Arigatou
+    - Mahalo
+    - Danke
+    - Grazie
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Take care
+    - Later
+    - Adios
+    - Sayonara
+    - Ciao
+    - Hasta la vista
+    - Peace out
+    - Catch you later
+    - Laters
+    - Toodle-oo
+    - Fare thee well
+    - Godspeed
+    - Cheerio
+- intent: bot_health
+  examples: |
+    - how are you?
+    - are you doing well
+    - you well
+    - i hope you well?
+    - well are you
+    - well you?
+    - You well
+    - Well You
+    - Hows everything
+    - How is your day
+    - How do you do
+    - How have you been
+    - What's up, my friend?
+    - How's it going today?
+    - Everything alright with you?
+    - I hope you're having a good one.
+    - Doing okay over there?
+    - How's your day been so far?
+    - Checking in to see how you're doing.
+    - Hope all is well on your end.
+    - Wondering how you're feeling today.
+    - Just wanted to see how you're holding up.
+    - I trust you're in good spirits today.
+    - Curious to know how your day is going.
+    - Hoping you're having a wonderful day.
+    - I'd love to hear how you're faring today.
+    - Inquiring about your current state of being.
+    - Wanted to ask how you're doing at the moment.
+    - I'm curious to learn about your current wellbeing.
+    - I'm interested in knowing how you're feeling right now.
+    - I'd be glad to hear an update on how you're doing today.
+    - I'm wondering if you could share how you're doing at the moment.
+    - how are you
+    - tell me about you
+- intent: user_postive_health
+  examples: |
+    - great
+    - I am good thanks
+    - happy
+    - very happy
+    - i am so happy
+    - perfect thanks
+    - I am Perfect
+    - very good
+    - good thanks
+    - doing well also thank you
+    - doing well
+    - feeling good
+    - Fantastic
+    - I'm in high spirits
+    - Couldn't be better
+    - Absolutely wonderful
+    - Over the moon
+    - Thrilled
+    - Ecstatic
+    - Delighted
+    - Cheerful
+    - Chipper
+    - Buoyant
+    - Radiant
+    - Gleeful
+    - Euphoric
+    - Elated
+    - Joyful
+    - Blissful
+    - Exuberant
+    - Jubilant
+    - Beaming
+    - [okay i am]( good) good thanks
+    - i am good thanks
+- intent: user_negtive_health
+  examples: |
+    - not well
+    - i am sad
+    - sad
+    - im kinda sad
+    - not good
+    - very bad
+    - bad
+    - sady
+    - upset
+    - I am upset
+    - not happy
+    - feeling down
+    - Unwell
+    - Downcast
+    - Gloomy
+    - A bit down
+    - Not doing so great
+    - Quite poor
+    - Dreadful
+    - Morose
+    - Dismal
+    - Dejected
+    - Melancholic
+    - Despondent
+    - Forlorn
+    - Doleful
+    - Crestfallen
+    - Disheartened
+    - Dispirited
+    - Woeful
+    - Sorrowful
+    - Inconsolable
+- intent: about_ai_course
+  examples: |
+    - class
+    - tell me about ai northampton
+    - ai course
+    - ai course at northampton
+    - northampton ai
+    - ai northampton
+    - Ai at UON
+    - what will I learn if i study ai at northampton
+    - Artificial intelligence at Northampton
+    - uon ai
+    - AI and data science at Northampton
+    - Can you describe the key components of the BSc Artificial Intelligence programme at the University of Northampton
+    - What are the main features of the BSc Artificial Intelligence programme offered by the University of Northampton
+    - What does the BSc Artificial Intelligence programme at the University of Northampton encompass
+    - Could you outline the core elements of the BSc Artificial Intelligence programme at the University of Northampton
+    - What constitutes the BSc Hons Artificial Intelligence programme at the University of Northampton
+    - What are the principal aspects of the BSc Artificial Intelligence programme provided by the University of Northampton?
+    - What are the major components included in the BSc Artificial Intelligence curriculum at the University of Northampton?
+    - Can you provide an overview of the BSc Artificial Intelligence programme at the University of Northampton?
+    - What are the foundational elements of the BSc Artificial Intelligence programme at the University of Northampton
+    - What does the curriculum of the BSc Artificial Intelligence at the University of Northampton include?
+    - Could you detail the structure of the BSc Artificial Intelligence programme at the University of Northampton
+    - What are the defining features of the BSc Artificial Intelligence programme at the University of Northampton
+    - Can you summarize the main points of the BSc Artificial Intelligence programme offered at the University of Northampton
+    - What are the key elements that make up the BSc Artificial Intelligence programme at the University of Northampton
+    - How is the BSc Artificial Intelligence programme at the University of Northampton structured?
+    - elvin this intent is ai course.
+    - What qualifications are required to enroll in the AI program at Northampton?
+    - What are the academic standards for admission into Northampton's AI course?
+    - What must I have to begin studying AI at Northampton University?
+    - Qualifications to start AI studies at Northampton?
+    - What academic criteria must I meet to study Artificial Intelligence at Northampton?
+    - Eligibility criteria for AI at Northampton?
+    - What are the admission prerequisites for AI at Northampton?
+    - Requirements for entering the AI program at Northampton?
+    - What do I need in terms of education to pursue AI at Northampton?
+    - What academic prerequisites must be fulfilled for studying AI at Northampton?
+    - Entry qualifications for Northamptons AI program?
+    - Can I qualify to study AI at Northampton with my current grades?
+    - What educational background is needed for AI at Northampton?
+    - Academic requirements for Northampton AI course?
+    - Could you provide an overview of the BSc Artificial Intelligence degree at Northampton?
+    - I'd like to learn more about the key components that make up the AI programme at Northampton.
+    - What are the defining features and core elements of the Artificial Intelligence BSc at Northampton?
+    - Can you give me a comprehensive summary of the BSc Artificial Intelligence offered by the University of Northampton?
+    - I'm curious to understand the foundational structure and curriculum of the Northampton AI degree programme
+    - Would you be able to outline the principal aspects and major components of the BSc Artificial Intelligence at Northampton?
+    - I'd appreciate if you could detail the learning outcomes and key focus areas covered in the Northampton AI bachelor's degree.
+    - Could you describe the overall scope and educational objectives of the BSc Artificial Intelligence programme at the University of Northampton?
+    - I'm interested in getting a thorough understanding of the BSc Hons Artificial Intelligence degree offered by the University of Northampton  could you provide that?
+    - What are the specific qualifications and academic standards required for admission into the AI program at the University of Northampton?
+    - Can you detail the exact educational prerequisites and entry criteria that prospective students must fulfill to be accepted into Northampton's AI degree?
+    - I'd like to know the specific academic background qualifications and grades needed in order to qualify for enrollment in the AI course at the University of Northampton.
+    - Could you outline the detailed admission requirements including the necessary educational credentials and prior academic performance for the BSc Artificial Intelligence program at Northampton?
+    - I'm hoping you can provide me with a comprehensive overview of the academic standards entry qualifications and prerequisites that applicants must meet to be admitted into the AI undergraduate degree at the University of Northampton.
+    - What are the exact educational requirements in terms of subjects grades and prior experience that students must demonstrate to be eligible for acceptance into the Artificial Intelligence BSc program at the University of Northampton?
+    - I'd appreciate if you could give me a thorough breakdown of the specific academic criteria including any mandatory qualifications and minimum grade thresholds that are required for enrollment in the AI course offered by the University of Northampton.
+    - Can you detail the full list of academic prerequisites such as necessary subject knowledge qualification levels and grade point averages that prospective students must fulfill in order to be considered for the BSc Artificial Intelligence degree at the University of Northampton?
+    - I'm curious to understand the complete set of educational requirements including any subject-specific prerequisites and overall academic performance standards that applicants must meet to gain admission into the Artificial Intelligence bachelor's program at the University of Northampton.
+    - Could you provide me with a comprehensive breakdown of the exact academic qualifications prior educational background and grade criteria that students need to demonstrate in order to be accepted into the BSc Artificial Intelligence course at the University of Northampton?
+    - what will i learn if i study ai at nothampton
+    - tell me what i will learn if i study ai at norhampton
+- intent: what_need_for_ai
+  examples: |
+    - what do i need to study Ai
+    - study ai
+    - grades needed to study ai
+    - what are the prerequisites
+    - prerequisites
+    - prerequisites for ai at northampton
+    - can i study ai at Nothampton
+    - what do i need to study ai at northampton
+    - what do i need to study Artificial intelligence at Northampton
+    - study Artificial intelligence at Northampton
+    - entry requirements
+    - Entry requirements
+    - Requirements
+    - what will i learn if i study ai at nothampton
+- intent: genarl_ai_ask
+  examples: |
+    - tell me what ai is
+    - what is ai
+    - what is artificial intelligence
+    - Tell me what ai is
+    - ai?
+    - AI
+    - artificial intelligence
+    - explain ai
+    - tell me ai
+    - ai is
+    - is ai
+- intent: jobs_internships
+  examples: |
+    - jobs
+    - internships
+    - intern
+    - tell me about internships
+    - where can i find internships for ai
+    - ai internships
+    - tech internships
+    - internships?
+    - i need internship
+    - find internship
+    - summer internships
+    - paid internships
+    - remote internships
+    - internship opportunities near me
+    - help find internship
+    - tell me about park ave
+    - what can you tell me about ineternships
+- intent: jobs_placement
+  examples: |
+    - tell me about placement
+    - placement year
+    - i need a placement
+    - what is a placement
+    - where can i find placement for ai
+    - does Northampton offer a placement year
+    - placement?
+    - internships?
+    - i need placement
+    - find placement
+    - paid placement
+    - remote placement?
+    - Placement opportunities near me
+    - help find placement
+- intent: securing_internship_placement
+  examples: |
+    - Tell me some resume tips
+    - how do i secure placement
+    - how do i secure an internship
+    - tips for internship
+    - tips for placement
+    - placement tips
+    - internship tips
+    - help secure internship
+    - help secure placement
+    - help internship
+    - help placement
+    - how to apply for internships
+    - how to apply for placement
+    - how to get an internship 
+    - how to get an placement
+- intent: job_pros
+  examples: |
+    - what can I expect with this course
+    - what can i achieve
+    - what have people studying AI achieved
+    - AI achieved
+    - students success
+    - what have students done
+    - success at Northampton
+    - success with ai
+    - ai course success
+    - success students
+- intent: accom_price
+  examples: |
+    - how much are accoms
+    - price for accoms
+    - pricing for homes
+    - accoms price 
+    - pricing for accoms 
+    - home pricing 
+    - price for living in homes 
+    - price for living in an accom 
+    - rent for accoms 
+    - renting 
+    - how much is rent 
+- intent: accom_price_uni
+  examples: |
+    - pricing for halls accommodations
+    - how much is rent at uni 
+    - can you tell me how much it is to rent an accom in waterside
+    - can you tell me how much it is to rent an accom in stJohns
+    - can you tell me how much it is to rent an accom in scohlars
+    - pricing for uni accoms
+- intent: non_uni_pricing
+  examples: |
+    - pricing for private accommodation
+    - how much is rent in a private accom
+    - pricing for private

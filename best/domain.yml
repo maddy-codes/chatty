@@ -1,0 +1,119 @@
+version: '2.0'
+intents:
+- about_ai_course
+- ask_accommodation
+- ask_external_accommodation
+- ask_general_question
+- ask_module_info
+- ask_scholars
+- ask_stjones
+- ask_student_life
+- ask_university_accommodation
+- ask_visa_requirements
+- ask_waterside
+- bot_challenge
+- bot_health
+- genarl_ai_ask
+- goodbye
+- greet
+- jobs_internships
+- jobs_placement
+- modulename_or_coursename
+- positive_confirmation
+- securing_internship_placement
+- thank
+- user_negtive_health
+- user_postive_health
+- what_can_i_do_wit_ai
+- what_need_for_ai
+- internships_all
+entities:
+- ' good'
+- module
+- module_name
+- module_code
+
+slots:
+  module:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: module
+
+
+responses:
+  utter_greet:
+  - text: Hello! I'm the University of Northampton's AI course assistant. How can I help you today?
+  utter_accommodation_options:
+  - text: The University of Northampton offers 3 halls of residence, all located on or near the Waterside campus. Accommodation is guaranteed for new full-time students who apply by the deadline. Private rented accommodation in Northampton is also an option for students.
+  utter_student_life_info:
+  - text: Student life at the University of Northampton is vibrant and engaging. The Students' Union organizes various events and activities throughout the year. There are also numerous sports clubs and societies you can join to meet like-minded people. Northampton itself is a welcoming town with parks, museums, and cultural attractions to explore.
+  utter_visa_requirements:
+  - text: International students from outside the UK or Ireland may need a visa to study at the University of Northampton. The type of visa depends on your country of origin and the length of your course. You can apply for a visa up to 6 months before the start of your course, and the University provides guidance and support for visa applications.
+  utter_ask_more_questions:
+  - text: Do you have any other questions about the AI course or studying at the University of Northampton?
+  utter_youre_welcome:
+  - text: You're welcome! It's my pleasure to help. Pleas feel free to ask me another question
+  utter_goodbye:
+  - text: Goodbye! If you have any more questions, feel free to ask. Best of luck with your AI studies!
+  utter_iamabot:
+  - text: I am an AI chatbot designed to provide information about the University of Northampton's artificial intelligence program. How else can I assist you today?
+  utter_ask_year:
+  - text: For asking about the following information, can you please confirm me your year of study?
+  utter_ask_modulename_or_coursename:
+  - text: Thank you, please can you tell me the module you are asking for?
+  utter_ask_accommodation_waterside:
+  - text: "The Waterside accommodation is one of the university's premier on-campus housing options. Some key details about Waterside: . Free Wi-Fi internet access . Heating, lighting, and water included in your rent . Kitchen (with appliances incl. toasters, microwaves, etc) and living area . Washing machines and dryers . Recycling and waste collection . Dedicated support team . 24-hour security . Room insurance included in your rent . The accommodation is very popular, so I'd recommend applying early. You can find more details and the application process on the university's housing website - paste this into your url (https://www.northampton.ac.uk/student-life/accommodation/halls-of-residence/waterside-halls)."
+  utter_ask_accommodation:
+  - text: Sure thing, what type of accommodation are you looking for? University owned, or elsewhere such as private student accommodations
+  utter_stjohn_accommodation:
+  - text: "The St. Johnes accommodation is one of the university's historic on-campus housing options. Some key details about St. Jones: Kitchen (with appliances incl. toasters, microwaves, etc) and living area Heating, lighting, and water included in your rent Recycling and waste collection Washing machines and dryers Free Wi-Fi internet access Room insurance included in your rent Dedicated support team 24-hour security, for some further information please follow this link or paste it into your url (https://www.northampton.ac.uk/student-life/accommodation/halls-of-residence/st-johns-halls)"
+  utter_schol_accommodation:
+  - text: "The Scholars accommodation is one of the university's premier on-campus housing options. Some key details about Scholars: Free Wi-Fi internet access Room insurance included in your rent Heating, water, and lighting included in your rent Kitchen facilities (incl. cooker, microwaves, etc) and living space Dedicated support team 24-hour security Washing machines and dryers Recycling and waste collection Due to its high demand, I'd recommend applying early. You can find the application process and more details on the university's housing website (https://www.northampton.ac.uk/student-life/accommodation/halls-of-residence/scholars-green-student-village)"
+  utter_non_uni_accommodation:
+  - text: 'For privately-rented housing, there are a few key things to keep in mind: Location - Look for properties that are conveniently located near campus or have good public transportation links. This can help minimize your commute time. Costs - Privately-rented accommodations may have lower base rents compared to university housing. Roommates Tenancy agreements I would suggest you looking on right move and searching student accommodations (https://www.rightmove.co.uk/student-accommodation/Northampton.html)'
+  utter_Iam_well:
+  - text: Great! but I must say I am just a chatbot created by some students who studied AI and data science at Northampton University of which Kelvin is my favourite . How are you doing?
+  utter_user_neg_res:
+  - text: oh, sorry to hear that!. please feel free to ask me a question relating to Northampton and I will try my best answer and maybe that wil cheer you up
+  utter_user_pos_res:
+  - text: I am glad to hear that! please feel free to ask me a question relating to Northampton and I will try my best answer to keep that mood up!
+  utter_ai_in_northampton:
+  - text: 'Here is a quick overview of what you can expect if you decide to pursue  AI at Northampton - AI and Data Science equips students with the knowledge and practical skills to pursue careers in fields like machine learning, solution architecture, project management, and AI research. The program covers the fundamentals and applications of data science and machine learning. Year 1 In the first year, students take common computer science modules to build a strong foundation, as well as a specialized module tailored for the AI and Data Science program. Year 2 The second year focuses on more specialized modules such as Introduction to AI, Cloud Computing and Big Data, and Relational Databases. Students also complete a group project to develop an innovative AI solution for a real-world challenge. Year 3 In the final year, students acquire comprehensive AI skills through advanced modules like Advanced AI and Applications, Natural Language Processing, Modern Databases, and Media Technology. They also have the opportunity to complete an independent dissertation on a specialist AI topic. for further information on the Ai course at Northampton please visite this link or copy and paste it into your url (https://www.northampton.ac.uk/courses/artificial-intelligence-and-data-science-bsc-hons/#course_content) '
+  utter_ai_prerequisites:
+  - text: 'As of current, these are the requirements needed to study Ai and Data Science at Northampton University- A typical offer for the BSc Data Science and Artificial Intelligence degree is: BCC at A-Level or, DMM at BTEC/Cambridge Technical or, Pass (C and above) at T Level Applicants will be expected to have achieved GCSE Mathematics (or equivalent) at grade C/4 or above. We welcome international applicants and applications from students with a range of non-traditional educational or professional qualifications, as well as applications from students with a mix of A levels and BTEC/Cambridge Technical qualifications. Integrated Foundation Year (IFY) Entry Requirements Admission to this foundation course is DEE at A Level or, MPP at BTEC or, Pass (D or E) at T Level However, we would also like to hear from you if you have professional or industry experience instead, a range of other qualifications or self-developed subject knowledge that relates to the course you wish to study. English Language Requirements All International and EU students applying for a course with us must meet the following minimum English language requirements IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands for study at undergraduate level I would recommend keeping an eye on the UON website incase the change. (https://www.northampton.ac.uk/courses/artificial-intelligence-and-data-science-bsc-hons/#course_content)'
+  utter_what_is_ai:
+  - text: AI, or Artificial Intelligence, is technology that allows computers and machines to perform tasks that would normally require human intelligence. This includes things like recognizing patterns, learning from data, making decisions, and even being creative. The key idea behind AI is to create systems that can think and learn in a way that mimics the human brain. This is done by feeding large amounts of data into complex algorithms and neural networks, which allow the AI to identify patterns and make predictions. Some common examples of AI in use today include virtual assistants like Siri or Alexa, self-driving cars, and AI-powered chatbots and content generators. As the technology continues to advance, the applications of AI are becoming more and more widespread across industries. The ultimate goal of AI research is to create general AI - systems that can match or exceed human-level intelligence and problem-solving abilities. However, this is still largely theoretical, and most current AI is focused on narrow, specialized tasks rather than broad, human-like intelligence. In summary, AI is the technology that allows machines to perform intelligent tasks, with the aim of replicating and even surpassing human cognitive abilities. It's a rapidly evolving field with exciting real-world applications. Northampton is a great place to learn more about AI on a theoretical and practical level. The students that created me actually studied AI at Northampton!
+  utter_internships:
+  - text: Internships are valuable opportunities, they are a great way of preparing for future jobs and getting some relevant experience on your CV, they typically take place in summer and last around 3 months. The professors on the Ai course do a great job of giving students internship opportunities as they are well connected with some companies local to northampton. You can internship opportunities on job boards like Bright network , and by networking with professionals in your field of interest on LinkedIn ( https://www.linkedin.com/login  https://www.brightnetwork.co.uk/internships/ ).
+  utter_placement:
+  - text: Placements are valuable opportunities, they are a great way of preparing for future jobs and getting some relevant experience on your CV, they typically start in september and last around 1 year. The professors on the Ai course do a great job of giving students placement opportunities as they are well connected with some companies local to northampton. You can internship opportunities on job boards like Bright network , and by networking with professionals in your field of interest on LinkedIn ( https://www.linkedin.com/login   https://www.brightnetwork.co.uk/industrial-placements/ ).
+  utter_job_help:
+  - text: When it comes to securing internships or placements I would recommend these tips- Start early and apply well in advance. Leverage your network of professors, counselors, and professionals. Tailor your application materials to each opportunity. Highlight relevant skills and experience. Prepare thoroughly for interviews. Follow up and express gratitude. Explore online job boards and networking platforms. Please check out this link as it highlights some of the things you can do to best prepare for an internship or placement opportunities ( https://www.northampton.ac.uk/blog/navigating-the-path-to-success-a-guide-to-securing-placements-and-internships/ )
+  utter_job_proc:
+  - text: There are a lot of job prospects if you chose to study AI and data science at northampton. Here are some of things students studying AI at Northampton have achieved with their course. Jatin - Secured a placement year at a top pharm Aria - received an offer at Qumin Kelvin - Secured an internship at in Technology at a Global investment bank Please look here for further information on how students are finding their course and their achievements ( https://uonai.blog/  )
+  utter_price_accoms:
+  - text: I see you are looking for pricing regarding accommodation, please tell me if you mean 'pricing for private accommodation' or if you 'pricing for halls accommodations'
+  utter_price_private_accoms:
+  - text: when it comrs to private renting, prices vary i would suggest looking on sights like right move (insert link)
+  utter_price_uni_accoms:
+  - text: when it comes to University pricing, accommodations prices vary. I suggest checking the accommodation website for further details
+  utter_student_number:
+  - text: Please wirte your student number in [exactly 8 digits].
+
+
+
+actions:
+- utter_greet
+- utter_internships
+- utter_Iam_well
+- utter_user_pos_res
+- utter_ai_in_northampton
+- utter_non_uni_accommodation
+- utter_ask_accommodation
+- action_module_info
+- action_general_question
+- action_tell_time
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
