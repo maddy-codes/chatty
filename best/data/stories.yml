@@ -63,6 +63,7 @@ stories:
   - action: utter_user_pos_res
   - intent: jobs_internships
   - action: utter_internships
+  - action: action_get_internships
   - intent: what_need_for_ai
   - intent: about_ai_course
   - action: utter_ai_in_northampton

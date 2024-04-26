@@ -2,16 +2,14 @@ digraph  {
 0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class=active, fontsize=12, label=action_session_start];
-2 [class=active, fontsize=12, label=utter_student_number];
-3 [class=active, fontsize=12, label=action_tell_time];
+2 [class=active, fontsize=12, label=utter_internships];
+3 [class=active, fontsize=12, label=action_get_internships];
 4 [class="intent dashed active", label="  ?  ", shape=rect];
-5 [class="intent active", fillcolor=lightblue, label="/time_table_ask", shape=rect, style=filled];
-6 [class="intent active", fillcolor=lightblue, label="/time_table_student_id", shape=rect, style=filled];
+5 [class="intent active", fillcolor=lightblue, label="/jobs_internships", shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];
 1 -> 5  [class=active, key=0];
-2 -> 6  [class=active, key=0];
+2 -> 3  [class=active, key=NONE, label=""];
 3 -> 4  [class=active, key=NONE, label=""];
 5 -> 2  [class=active, key=0];
-6 -> 3  [class=active, key=0];
 }

@@ -114,6 +114,7 @@ actions:
 - action_module_info
 - action_general_question
 - action_tell_time
+- action_get_internships
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

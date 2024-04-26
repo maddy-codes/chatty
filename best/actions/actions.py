@@ -7,6 +7,8 @@ import openai
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+import requests
+from bs4 import BeautifulSoup
 
 def phi3(message):
     # Point to the local server
@@ -58,13 +60,71 @@ class ActionTellTime(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        events = tracker.events
+        
+        # Iterate backwards to find the last bot utterance
+        for e in reversed(events):
+            if e["event"] != "bot":
+                last_bot_response = e["text"]
+                break
 
-        current_time = datetime.now().strftime("%H:%M:%S")
-        response_message = f"The current time is: {current_time}"
-        return_classes = text(22405755)
+        return_classes = text(last_bot_response)
         strr = ""
         for strrr in return_classes:
-            strr += strrr
+            strr += "\n" + strrr
+            
+        dispatcher.utter_message(text=strr)
+
+        return []
+    
+
+
+def get_internships():
+    # URL to scrape
+    url = "https://www.brightnetwork.co.uk/search/?s=ai+internship"
+
+    # Send a GET request to the URL
+    response = requests.get(url)
+
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.content, "html.parser")
+
+    # Find all the internship listings
+    internship_listings = soup.find_all("div", class_="col-10 col-lg-8 description")
+
+    # Extract the relevant information from each internship listing
+    print('I see you are looking for internships, here are 5 internships from Brightnetwork ( https://www.brightnetwork.co.uk/search/?s=ai+internship ) click the link on each to see further details')
+
+    top_five = []
+
+    for i, listing in enumerate(internship_listings[:5]):  # Only display the first 5 listings
+
+        title = listing.find("h3").text.strip()
+        company_location = listing.find("span", class_="search-result-row__subtitle").text.strip().split("-")
+        company = company_location[0]
+        location = company_location[1]
+        link = listing.find("a")["href"]
+        description = listing.find("p", class_="d-none d-lg-block").text.strip()
+
+        result = "=" * 80 + "\n" + f"Title: {title.strip()}" + "\n" + f"Company: {company.strip()}" + "\n" + f"Location: {location.strip()}" + "\n" + f"Link: https://www.brightnetwork.co.uk{link.strip()}" + "\n" + f"Description: {description.strip()}" + "\n" + "=" * 80
+
+        top_five.append(result)
+            
+    return top_five
+
+class ActionGetInternship(Action):
+    def name(self) -> Text:
+        return "action_get_internships"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return_classes = get_internships()
+        strr = ""
+        for strrr in return_classes:
+            strr += "\n" + strrr
             
         dispatcher.utter_message(text=strr)
 

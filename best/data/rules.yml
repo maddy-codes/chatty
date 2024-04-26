@@ -96,7 +96,8 @@ rules:
 - rule: give internship link and explain whilst plugging nn 
   steps:
   - intent: jobs_internships
-  - action: utter_internships   
+  - action: utter_internships
+  - action: action_get_internships
 
 - rule: give placement link and explain whilst plugging nn 
   steps:
