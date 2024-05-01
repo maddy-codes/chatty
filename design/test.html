@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <title>IT Chamurai</title>
     <style>
         * {
@@ -56,18 +61,63 @@
             padding: 20px;
             border-radius: 5px;
         }
+
+        .font-sans {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: oblique;
+        }
+
+        .loader {
+            text-align: center;
+        }
+
+        .loader span {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            background: black;
+            border-radius: 20px;
+            animation: loader 0.8s infinite alternate;
+        }
+
+        .loader span:nth-of-type(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loader span:nth-of-type(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes loader {
+            0% {
+                opacity: 0.9;
+                transform: scale(0.5);
+            }
+
+            100% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+        }
+
+        .hide_ele {
+            display: none;
+        }
     </style>
 </head>
 
-<body class="lalala">
+<body class="lalala font-sans">
     <div class="container mx-auto px-4 py-8 h-screen">
         <div class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col bg-gray-500">
             <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center text-lalala"
                 style="background-color: #E0FBFC;">
-                <div class="header-container flex">
+                <div class="header-container flex text-center">
 
-                    <img src="./uon_logo.png" class="">
-                    <h2 class="text-2xl font-semibold text-lalala display-1">University of Northampton</h2>
+                    <img src="./uon_logo.png" class=" h-14 mr-3">
+                    <h2 class="text-2xl font-semibold text-lalala font-sans ">University of Northampton</h2>
                 </div>
                 <button id="voice-button"
                     class="lalala hover:lalala text-white px-4 py-2 rounded-lg focus:outline-none">
@@ -85,27 +135,55 @@
         </div>
     </div>
     <script>
-// BUTTONS TO BE ABLE TO CLICK
-     
 
-        
+        let QUESTION_ASKED = ''        
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:1234/v1", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Process the response here
+                console.log(response);
+            }
+        };
+        xhr.send();
+
+
+
+
 
         document.addEventListener('DOMContentLoaded', function () {
-    // Display the initial greeting message and options when the page loads
-    displayInitialGreeting();
-});
+            // Display the initial greeting message and options when the page loads
+            displayInitialGreeting();
+        });
 
 
+        //This functions adds the typing thing to the message box
+        function typingBuffer() {
+            displayHTML("", "<span class='loader'><span></span><span></span><span></span></span>", "bot")
+        }
 
-function displayInitialGreeting() {
-    displayMessage('Hello there, please select from the drop-down menu the topic of conversation you may need some assistance in and ask away. This makes my job just a little bit easier :)', 'bot');
-   displayHTML("Please select from options below",`<div class="flex-1"> 
+        //This function removes the typing thing from the message box
+        function removeTypingBuffer() {
+            var eles = document.getElementsByClassName('loader');
+            for (var i = 0; i < eles.length; i++) {
+                var ele = eles[i].parentElement.parentElement;
+                ele.classList.add('hide_ele');
+            }
+        }
+
+
+        function displayInitialGreeting() {
+            displayMessage('Hello there, please select from the drop-down menu the topic of conversation you may need some assistance in and ask away. This makes my job just a little bit easier :)', 'bot');
+            displayHTML("Please select from options below", `<div class="flex-1 font-sans"> 
     <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('University Accommodation','accomodation')"> University Accommodation</button>
     <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('About AI & Data Science','AI Course')">  About AI & Data Science</button>
     <button class="bg-yellow-500 pl-2 pr-2 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('Internships & Placements','internships')">  Internships & Placements</button>
     <button class="bg-pink-500 pl-2 pr-2 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('Student Life','student life')">  Student Life</button></div>
-`,'bot')
-} 
+`, 'bot')
+
+        }
 
 
 
@@ -125,18 +203,21 @@ function displayInitialGreeting() {
         voiceButton.addEventListener('click', function () {
             const lastBotMessage = chatMessages.lastElementChild.querySelector('p').textContent;
             speakMessage(lastBotMessage);
-        });  
+        });
 
         function displayMessage(message, sender, references) {
             const messageElement = document.createElement('div');
-            messageElement.classList.add('flex', 'mb-4');
+            messageElement.classList.add('flex', 'mb-4', "backdrop-blur-xl");
 
             if (sender === 'bot') {
+
+                removeTypingBuffer();
+
                 messageElement.innerHTML = `
                     
                 <img src="logo.png" class="h-14 w-14 mr-2 rounded-full">
-                    <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg">
-                        <p class="typing-effect"></p>
+                    <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg  bg-white/30">
+                        <p class="typing-effect font-sans"></p>
                     </div>
                     
                 `;
@@ -145,8 +226,8 @@ function displayInitialGreeting() {
             } else {
                 messageElement.classList.add('justify-end');
                 messageElement.innerHTML = `
-                    <div class="lalala text-black p-3 rounded-lg max-w-xs shadow-lg">
-                        <p>${message}</p>
+                    <div class="lalala text-black p-3 rounded-lg max-w-xs shadow-lg ">
+                        <p class="font-sans">${message}</p>
                     </div>
                     <img src="user.png" alt="Bot Logo" class="h-10 w-10 ml-2 rounded-full">
                 `;
@@ -156,8 +237,8 @@ function displayInitialGreeting() {
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        function preCursor(message,trigger){
-            displayMessage(message, 'not_bot'); 
+        function preCursor(message, trigger) {
+            displayMessage(message, 'not_bot');
             sendMessage(trigger);
         }
 
@@ -199,6 +280,8 @@ function displayInitialGreeting() {
 
         async function sendMessage(message) {
             try {
+                typingBuffer()
+                QUESTION_ASKED = message;
                 const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
                     method: 'POST',
                     headers: {
@@ -214,15 +297,16 @@ function displayInitialGreeting() {
                     const references = extractReferences(botMessage);
                     console.log(references);
                     const messageWithoutReferences = removeReferences(botMessage);
+                    //openai(messageWithoutReferences,QUESTION_ASKED)
                     displayMessage(messageWithoutReferences, 'bot', references);
-                    
+
                     displayHTML("",
-                                `   <span class="flex-1"> 
+                        `   <span class="flex-1 font-sans"> 
                                         Did that answer your question?
                                         <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('Thank you for the feedback! Is there anything else that I can help you with?','bot')">Yes</button>
-                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('Thank you for the feedback! Is there anything else that I can help you with?','bot')" >No </button>
+                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('I am really sorry, I will report this incident to the team! Thanks for bearing with us!','bot')" >No </button>
                                     </span>
-                                `,'bot')
+                                `, 'bot')
                 } else {
                     console.error('Unexpected response format:', data);
                     displayMessage('Sorry, I encountered an error.', 'bot');
@@ -249,16 +333,17 @@ function displayInitialGreeting() {
 
 
 
-        function displayHTML(message,htm_passed, sender, references) {
+        function displayHTML(message, htm_passed, sender, references) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('flex', 'mb-4');
 
             if (sender === 'bot') {
+
                 messageElement.innerHTML = `
                     
                 <img src="logo.png" class="h-14 w-14 mr-2 rounded-full">
-                    <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg">
-                        <p class="typing-effect"></p>
+                    <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg ">
+                        <p class="typing-effect font-sans"></p>
                         ${htm_passed}
                     </div>
                 
@@ -268,15 +353,46 @@ function displayInitialGreeting() {
             } else {
                 messageElement.classList.add('justify-end');
                 messageElement.innerHTML = `
-                    <div class="lalala text-black p-3 rounded-lg max-w-xs shadow-lg">
+                    <div class="lalala text-black p-3 rounded-lg max-w-xs shadow-lg font-sans ">
                         <p>${message}</p>
                     </div>
-                    <img src="user.png" alt="Bot Logo" class="h-10 w-10 ml-2 rounded-full">
+                    <img src="user.png" alt="Bot Logo" class="h-10 w-10 ml-2 rounded-full font-sans">
                 `;
             }
 
             chatMessages.appendChild(messageElement);
             chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+
+        //const fetch = require('node-fetch');
+
+        async function openai(message,question) {
+            const response = await fetch('http://localhost:1234/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer lm-studio' // Replace YOUR_API_KEY_HERE with your actual API key
+                },
+                body: JSON.stringify({
+                    model: "lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF",
+                    messages: [
+                        {
+                            role: "system",
+                            content: "You are a university of Northampton AI Course bot, made to anwer student queries around the course and uni! Please  can you tailor the answer to the question asked by the student. So not go out of context, Please make sure that is the answer do not make snese, jsut say, 'I am not sure, sorry!'"
+                        },
+                        {
+                            role: "user",
+                            content: "question is" + question + "\n" + "answer given is " + message
+                        }
+                    ],
+                    temperature: 0.1
+                })
+            });
+
+            const data = await response.json();
+            console.log(data.choices[0].message.content);   
+            return data.choices[0].message.content;
         }
 
     </script>
