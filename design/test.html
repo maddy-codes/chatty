@@ -34,11 +34,15 @@
         }
 
         .lalala {
-            background-color: #E0FBFC;
+            background-color:   #2EC4B6;
         }
 
         .bg-gray-500 {
-            background-color: #9DB4C0;
+            background-color: #f1e8b8;
+        }
+
+        .laba{
+            background-color: #FF6666;
         }
 
         .hide-cursor {
@@ -66,7 +70,8 @@
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
-            font-style: oblique;
+            font-style: normal;
+            color: aliceblue;
         }
 
         .loader {
@@ -76,10 +81,10 @@
         .loader span {
             display: inline-block;
             vertical-align: middle;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             background: black;
-            border-radius: 20px;
+            border-radius: 15px;
             animation: loader 0.8s infinite alternate;
         }
 
@@ -110,27 +115,28 @@
 </head>
 
 <body class="lalala font-sans">
+    <div class="backdrop-blur-sm bg-white/30 h-5 w-5">
+        <!-- ... -->
+      </div>
+      
     <div class="container mx-auto px-4 py-8 h-screen">
         <div class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col bg-gray-500">
-            <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center text-lalala"
-                style="background-color: #E0FBFC;">
+            <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center laba">
                 <div class="header-container flex text-center">
-
-                    <img src="./uon_logo.png" class=" h-14 mr-3">
                     <h2 class="text-2xl font-semibold text-lalala font-sans ">University of Northampton</h2>
                 </div>
                 <button id="voice-button"
-                    class="lalala hover:lalala text-white px-4 py-2 rounded-lg focus:outline-none">
+                    class="lalala hover:lalala text-white px-4 py-2 rounded-lg focus:outline-none m-2">
                     <img class="max-h-5"
-                        src="https://s3-alpha.figma.com/hub/file/3858571977/5a78c81c-36ff-4681-8907-cd7df5955365-cover.png"
+                        src="https://banner2.cleanpng.com/20190802/pik/kisspng-icon-design-editorial-team-coming-soon-conscious-business-5d445709a91387.2490968115647598176925.jpg"
                         alt="">
                 </button>
             </div>
-            <div id="chat-messages" class="flex-grow overflow-y-auto"></div>
+            <div id="chat-messages" class="container flex-grow overflow-y-auto"></div>
             <div class="mt-4">
                 <input id="user-input" type="text"
-                    class="w-full px-4 py-2 border border-lalala rounded-lg focus:outline-none focus:ring-2 focus:ring-lalala"
-                    placeholder="Type your message...">
+                    class="w-full px-4 py-2 border border-lalala rounded-lg focus:outline-none focus:ring-2 focus:ring-lalala text-black"
+                    placeholder="Type your message..." required>
             </div>
         </div>
     </div>
@@ -170,6 +176,14 @@
             for (var i = 0; i < eles.length; i++) {
                 var ele = eles[i].parentElement.parentElement;
                 ele.classList.add('hide_ele');
+            }
+        }
+
+        function remove_parent(class_name){
+            var eles = document.getElementsByClassName(class_name)
+            for(var i=0;i<eles.length;i++){
+                ele = eles[i];
+                ele.parentElement.parentElement.classList.add('hide_ele');
             }
         }
 
@@ -278,6 +292,10 @@
             window.speechSynthesis.speak(speech);
         }
 
+        function feedback_loop(message){
+            displayMessage(message,'bot');
+            remove_parent(class_name = 'feedback_que');
+        }
         async function sendMessage(message) {
             try {
                 typingBuffer()
@@ -298,13 +316,14 @@
                     console.log(references);
                     const messageWithoutReferences = removeReferences(botMessage);
                     //openai(messageWithoutReferences,QUESTION_ASKED)
-                    displayMessage(messageWithoutReferences, 'bot', references);
+                    const res = await openai(messageWithoutReferences,QUESTION_ASKED);
+                    displayMessage(res, 'bot', references);
 
                     displayHTML("",
-                        `   <span class="flex-1 font-sans"> 
+                        `   <span class="flex-1 font-sans feedback_que"> 
                                         Did that answer your question?
-                                        <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('Thank you for the feedback! Is there anything else that I can help you with?','bot')">Yes</button>
-                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg" onclick="displayMessage('I am really sorry, I will report this incident to the team! Thanks for bearing with us!','bot')" >No </button>
+                                        <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 rounded-lg" onclick="feedback_loop('Thank you for the feedback! Is there anything else that I can help you with?','bot')">Yes</button>
+                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg" onclick="feedback_loop('I am really sorry, I will report this incident to the team! Thanks for bearing with us!','bot')" >No </button>
                                     </span>
                                 `, 'bot')
                 } else {
@@ -379,11 +398,11 @@
                     messages: [
                         {
                             role: "system",
-                            content: "You are a university of Northampton AI Course bot, made to anwer student queries around the course and uni! Please  can you tailor the answer to the question asked by the student. So not go out of context, Please make sure that is the answer do not make snese, jsut say, 'I am not sure, sorry!'"
+                            content: "You are a uni of Northampton BOT, You are to hooked into backend of RASA, to better serve the purposes of the chatbot, do not modify the answer in an inappropriate way. Please start with Sure! If the question do not makes sense make sure to say it again! Please!! "
                         },
                         {
                             role: "user",
-                            content: "question is" + question + "\n" + "answer given is " + message
+                            content: "Please be professional! Do not mention anything about RASA, jsut tailor the info to the question thanks! question is" + question + "\n" + "answer emitted by RASA is" + message
                         }
                     ],
                     temperature: 0.1
