@@ -53,8 +53,6 @@ stories:
   - action: utter_greet
   - intent: ask_accommodation
   - action: utter_ask_accommodation
-  - intent: ask_external_accommodation
-  - action: utter_non_uni_accommodation
   - intent: bot_health
   - action: utter_Iam_well
   - intent: bot_health

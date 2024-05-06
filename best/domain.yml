@@ -2,15 +2,10 @@ version: '2.0'
 intents:
 - about_ai_course
 - ask_accommodation
-- ask_external_accommodation
 - ask_general_question
 - ask_module_info
-- ask_scholars
-- ask_stjones
 - ask_student_life
-- ask_university_accommodation
 - ask_visa_requirements
-- ask_waterside
 - bot_challenge
 - bot_health
 - genarl_ai_ask
@@ -41,8 +36,6 @@ slots:
 responses:
   utter_greet:
   - text: Hello! I'm the University of Northampton's AI course assistant. How can I help you today?
-  utter_accommodation_options:
-  - text: The University of Northampton offers 3 halls of residence, all located on or near the Waterside campus. Accommodation is guaranteed for new full-time students who apply by the deadline. Private rented accommodation in Northampton is also an option for students.
   utter_student_life_info:
   - text: Student life at the University of Northampton is vibrant and engaging. The Students' Union organizes various events and activities throughout the year. There are also numerous sports clubs and societies you can join to meet like-minded people. Northampton itself is a welcoming town with parks, museums, and cultural attractions to explore.
   utter_visa_requirements:
@@ -57,18 +50,8 @@ responses:
   - text: I am an AI chatbot designed to provide information about the University of Northampton's artificial intelligence program. How else can I assist you today?
   utter_ask_year:
   - text: For asking about the following information, can you please confirm me your year of study?
-  utter_ask_modulename_or_coursename:
-  - text: Thank you, please can you tell me the module you are asking for?
-  utter_ask_accommodation_waterside:
-  - text: "The Waterside accommodation is one of the university's premier on-campus housing options. Some key details about Waterside: . Free Wi-Fi internet access . Heating, lighting, and water included in your rent . Kitchen (with appliances incl. toasters, microwaves, etc) and living area . Washing machines and dryers . Recycling and waste collection . Dedicated support team . 24-hour security . Room insurance included in your rent . The accommodation is very popular, so I'd recommend applying early. You can find more details and the application process on the university's housing website - paste this into your url (https://www.northampton.ac.uk/student-life/accommodation/halls-of-residence/waterside-halls)."
   utter_ask_accommodation:
-  - text: Sure thing, what type of accommodation are you looking for? University owned, or elsewhere such as private student accommodations
-  utter_stjohn_accommodation:
-  - text: "The St. Johnes accommodation is one of the university's historic on-campus housing options. Some key details about St. Jones: Kitchen (with appliances incl. toasters, microwaves, etc) and living area Heating, lighting, and water included in your rent Recycling and waste collection Washing machines and dryers Free Wi-Fi internet access Room insurance included in your rent Dedicated support team 24-hour security, for some further information please follow this link or paste it into your url (https://www.northampton.ac.uk/student-life/accommodation/halls-of-residence/st-johns-halls)"
-  utter_schol_accommodation:
-  - text: "The Scholars accommodation is one of the university's premier on-campus housing options. Some key details about Scholars: Free Wi-Fi internet access Room insurance included in your rent Heating, water, and lighting included in your rent Kitchen facilities (incl. cooker, microwaves, etc) and living space Dedicated support team 24-hour security Washing machines and dryers Recycling and waste collection Due to its high demand, I'd recommend applying early. You can find the application process and more details on the university's housing website (https://www.northampton.ac.uk/student-life/accommodation/halls-of-residence/scholars-green-student-village)"
-  utter_non_uni_accommodation:
-  - text: 'For privately-rented housing, there are a few key things to keep in mind: Location - Look for properties that are conveniently located near campus or have good public transportation links. This can help minimize your commute time. Costs - Privately-rented accommodations may have lower base rents compared to university housing. Roommates Tenancy agreements I would suggest you looking on right move and searching student accommodations (https://www.rightmove.co.uk/student-accommodation/Northampton.html)'
+  - text: The University of Northampton provides over 2,250 fully-furnished rooms across Waterside campus, St Johns Halls (town centre), and Scholars Green Student Village (4.5 miles from campus with free Stagecoach bus service). Self-catered accommodation includes standard single/twin, en-suite, townhouses, and studios. All have utilities, WiFi, insurance, 24/7 security, CCTV, onsite police, and residential life support. Kitchens are equipped with microwaves, cookers, fridge/freezers, kettles, toasters, irons, ironing boards, vacuum cleaners, dustpan and brushes, mops and buckets. Students bring bedding, cooking/eating utensils, clothing, towels, and PAT-tested appliances (TVs need a licence). Disabled students are prioritized and accommodated. Students stay during breaks. Limited parking for £150/semester (cars) or £22.50/semester (motorcycles). Applications are first-come, first-served with no deposit for September 2024. Single-sex, mature, quiet, alcohol-free and LGBTQ+ flats available on request. Friends/relatives can apply to live together. Open days and online tours offered. FAQs cover prohibited items, insurance, inventories, room changes, homesickness, and cancellation. Contact the Accommodation team at accommodation@northampton.ac.uk or +44 (0)1604 892482. Main University number +44 (0)1604 735500. Waterside campus address. University Drive, Northampton, NN1 5PH, UK.
   utter_Iam_well:
   - text: Great! but I must say I am just a chatbot created by some students who studied AI and data science at Northampton University of which Kelvin is my favourite . How are you doing?
   utter_user_neg_res:
@@ -89,12 +72,6 @@ responses:
   - text: When it comes to securing internships or placements I would recommend these tips- Start early and apply well in advance. Leverage your network of professors, counselors, and professionals. Tailor your application materials to each opportunity. Highlight relevant skills and experience. Prepare thoroughly for interviews. Follow up and express gratitude. Explore online job boards and networking platforms. Please check out this link as it highlights some of the things you can do to best prepare for an internship or placement opportunities ( https://www.northampton.ac.uk/blog/navigating-the-path-to-success-a-guide-to-securing-placements-and-internships/ )
   utter_job_proc:
   - text: There are a lot of job prospects if you chose to study AI and data science at northampton. Here are some of things students studying AI at Northampton have achieved with their course. Jatin - Secured a placement year at a top pharm Aria - received an offer at Qumin Kelvin - Secured an internship at in Technology at a Global investment bank Please look here for further information on how students are finding their course and their achievements ( https://uonai.blog/  )
-  utter_price_accoms:
-  - text: I see you are looking for pricing regarding accommodation, please tell me if you mean 'pricing for private accommodation' or if you 'pricing for halls accommodations'
-  utter_price_private_accoms:
-  - text: when it comrs to private renting, prices vary i would suggest looking on sights like right move (insert link)
-  utter_price_uni_accoms:
-  - text: when it comes to University pricing, accommodations prices vary. I suggest checking the accommodation website for further details
   utter_student_number:
   - text: Please wirte your student number in [exactly 8 digits].
 actions:
@@ -104,7 +81,6 @@ actions:
 - utter_Iam_well
 - utter_user_pos_res
 - utter_ai_in_northampton
-- utter_non_uni_accommodation
 - utter_ask_accommodation
 - action_module_info
 - action_general_question

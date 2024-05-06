@@ -28,35 +28,6 @@ rules:
   - action: utter_ask_accommodation  
 
 
-- rule: List information about university accommodation 
-  steps:
-  - intent: ask_university_accommodation
-  - action: utter_accommodation_options
-
-
-- rule: List information about waterside
-  steps:
-  - intent: ask_waterside 
-  - action: utter_ask_accommodation_waterside
-
-
-
-
-- rule: List information about stjones
-  steps:
-  - intent: ask_stjones
-  - action: utter_stjohn_accommodation
-
-- rule: List information about scholors
-  steps:
-  - intent: ask_scholars
-  - action: utter_schol_accommodation
-
-- rule: say "Check on right move" when asked about non uni run accommodations
-  steps:
-  - intent: ask_external_accommodation
-  - action: utter_non_uni_accommodation
-
 #normal convo
 - rule: say "I am well" when asked about self
   steps:
@@ -117,23 +88,7 @@ rules:
   - action: utter_job_proc   
  
 #pricing 
-- rule: ask what type of pricing the user is looking for
-  steps:
-  - intent: accom_price  
-  - action: utter_price_accoms   
- 
 
-- rule: utter uni pricing 
-  steps:
-  - intent: accom_price_uni  
-  - action: utter_price_uni_accoms    
- 
-
-- rule: utter non uni pricing 
-  steps:
-  - intent: non_uni_pricing  
-  - action: utter_price_private_accoms     
- 
 - rule: utter ai info
   steps:
   - intent: what_need_for_ai

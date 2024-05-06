@@ -34,14 +34,14 @@
         }
 
         .lalala {
-            background-color:   #2EC4B6;
+            background-color: #2EC4B6;
         }
 
         .bg-gray-500 {
             background-color: #f1e8b8;
         }
 
-        .laba{
+        .laba {
             background-color: #FF6666;
         }
 
@@ -117,8 +117,8 @@
 <body class="lalala font-sans">
     <div class="backdrop-blur-sm bg-white/30 h-5 w-5">
         <!-- ... -->
-      </div>
-      
+    </div>
+
     <div class="container mx-auto px-4 py-8 h-screen">
         <div class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col bg-gray-500">
             <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center laba">
@@ -142,7 +142,7 @@
     </div>
     <script>
 
-        let QUESTION_ASKED = ''        
+        let QUESTION_ASKED = ''
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "http://localhost:1234/v1", true);
@@ -179,9 +179,9 @@
             }
         }
 
-        function remove_parent(class_name){
+        function remove_parent(class_name) {
             var eles = document.getElementsByClassName(class_name)
-            for(var i=0;i<eles.length;i++){
+            for (var i = 0; i < eles.length; i++) {
                 ele = eles[i];
                 ele.parentElement.parentElement.classList.add('hide_ele');
             }
@@ -292,8 +292,8 @@
             window.speechSynthesis.speak(speech);
         }
 
-        function feedback_loop(message){
-            displayMessage(message,'bot');
+        function feedback_loop(message) {
+            displayMessage(message, 'bot');
             remove_parent(class_name = 'feedback_que');
         }
         async function sendMessage(message) {
@@ -316,7 +316,8 @@
                     console.log(references);
                     const messageWithoutReferences = removeReferences(botMessage);
                     //openai(messageWithoutReferences,QUESTION_ASKED)
-                    const res = await openai(messageWithoutReferences,QUESTION_ASKED);
+                    const res = await openai(messageWithoutReferences, QUESTION_ASKED);
+                    console.log(messageWithoutReferences)
                     displayMessage(res, 'bot', references);
 
                     displayHTML("",
@@ -386,23 +387,23 @@
 
         //const fetch = require('node-fetch');
 
-        async function openai(message,question) {
+        async function openai(message, question) {
             const response = await fetch('http://localhost:1234/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer lm-studio' // Replace YOUR_API_KEY_HERE with your actual API key
+                    'Authorization': 'Bearer lm-studio'
                 },
                 body: JSON.stringify({
-                    model: "lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF",
+                    model: "TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
                     messages: [
                         {
                             role: "system",
-                            content: "You are a uni of Northampton BOT, You are to hooked into backend of RASA, to better serve the purposes of the chatbot, do not modify the answer in an inappropriate way. Please start with Sure! If the question do not makes sense make sure to say it again! Please!! "
+                            content: "Your name is Chamurai. You aer an AI assistant for the university of northampton. Your task is to answer the user's question using the provided background knowledge and your own reasoning. Focus on providing a concise and relevant answer without rephrasing everything or adding unnecessary information. Focus on delivering a brief and targeted response"
                         },
                         {
                             role: "user",
-                            content: "Please be professional! Do not mention anything about RASA, jsut tailor the info to the question thanks! question is" + question + "\n" + "answer emitted by RASA is" + message
+                            content: "Background knowledge: " + message + "\nQuestion: " + question
                         }
                     ],
                     temperature: 0.1
@@ -410,7 +411,7 @@
             });
 
             const data = await response.json();
-            console.log(data.choices[0].message.content);   
+            console.log(data.choices[0].message.content);
             return data.choices[0].message.content;
         }
 
