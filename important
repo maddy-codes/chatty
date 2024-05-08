@@ -4,3 +4,6 @@ Rasa Core Server : -
     rasa run --enable-api --cors '*' -p 5005 
 Rasa Actions Server : - 
     rasa run actions
+
+  1- python -m venv env   
+  2- env/Scripts/Activate.bat
