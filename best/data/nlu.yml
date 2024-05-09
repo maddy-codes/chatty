@@ -1,39 +1,18 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - Hi
-    - Hey
-    - Hello
-    - Good morning
-    - Good afternoon
-    - Good evening
-    - hi
-    - hey
-    - Greetings
-    - Whats up
-    - Nice to meet you
-    - Pleased to meet you
-    - Whats new
-    - Long time no see
-    - Welcome
-    - Yo
-    - Hiya
-    - Howdy
-    - Sup
-    - Cheers
-    - Salutations
-    - hello
-- intent: positve_confirmation
-  examples: |
-    - postive
-    - thats correct
-    - that is very much correct
-    - correct
-    - Thanks that helps
-    - yes that is the right answer
-    - perfect
-    - that is perfect
+# Custom actions
+
+# Time tables, Internships, Societies, Events, News, Scholarship, Facilities, Faculty 
+
+# societies -> https://northamptonunion.com/societies
+#  events- >  https://www.northampton.ac.uk/events/
+# news -> https://www.northampton.ac.uk/news/
+#scholarship -> not a custom acition 
+# faciltiies -> not a custom action
+
+# Time tables
+# 1- Ask for the User id (time_table_ask) -> 2- Scrape the timetable (time_table_student_id) -> 3- Feed it to LLM
+
 - intent: time_table_ask
   examples: |
     - Please tell me about my timetable
@@ -46,6 +25,266 @@ nlu:
   examples: |
     - My student ID is: [22405755](student_number)
     - [\d{8}](student_number)
+
+#Internships 
+# 1- Get 3 internships or placements related to Ai with their links and details 2- Get general advice about finkding internships 3- Feed that knowledge to LLM 
+  
+- intent: jobs_internships
+  examples: |
+    - jobs
+    - internships
+    - intern
+    - tell me about internships
+    - where can i find internships for ai
+    - ai internships
+    - tech internships
+    - internships?
+    - i need internship
+    - find internship
+    - summer internships
+    - paid internships
+    - remote internships
+    - internship opportunities near me
+    - help find internship
+    - tell me about park ave
+    - what can you tell me about ineternships
+    - tell me about placement
+    - placement year
+    - i need a placement
+    - what is a placement
+    - where can i find placement for ai
+    - does Northampton offer a placement year
+    - placement?
+    - internships?
+    - i need placement
+    - find placement
+    - paid placement
+    - remote placement?
+    - Placement opportunities near me
+    - help find placement
+    - Tell me some resume tips
+    - how do i secure placement
+    - how do i secure an internship
+    - tips for internship
+    - tips for placement
+    - placement tips
+    - internship tips
+    - help secure internship
+    - help secure placement
+    - help internship
+    - help placement
+    - how to apply for internships
+    - how to apply for placement
+    - how to get an internship
+    - how to get an placement
+
+
+#Societies
+
+#1- Scrape all the societies from the society site along with 5 words description and link 2- Feed that to LLM
+
+- intent: university_societies
+  examples: |
+    - university clubs
+    - student societies
+    - join a society
+    - university of Northampton societies
+    - how to join a society at university
+    - list of societies at Northampton
+    - cultural societies at university
+    - academic societies
+    - recreational societies
+    - how do I find societies at university
+    - benefits of joining a society
+    - student union societies
+    - how to start a new society
+    - society events
+    - society membership
+    - active societies at Northampton
+    - society meetings
+    - society roles
+    - society leadership opportunities
+    - society activities
+    - society participation
+    - engaging in university societies
+    - society registration
+    - society contributions
+    - society impact on campus life
+    - society networking opportunities
+    - society support services
+    - society awards
+    - society achievements
+    - society challenges
+
+
+#Events
+#1- Scrape events 2- Send the events to the LLM 
+
+- intent: university_events
+  examples: |
+    - university events
+    - campus activities
+    - what's happening on campus
+    - University of Northampton events
+    - how to find university events
+    - list of events at Northampton
+    - cultural events at university
+    - academic events
+    - recreational events
+    - how do I find events at university
+    - benefits of attending university events
+    - student union events
+    - how to participate in campus events
+    - event calendar for university
+    - university event announcements
+    - active events at Northampton
+    - event schedules
+    - event participation
+    - engaging in university events
+    - event registration
+    - event contributions
+    - event impact on campus life
+    - event networking opportunities
+    - event support services
+    - event awards
+    - event achievements
+    - event challenges
+    - upcoming events this semester
+    - weekend events at university
+    - evening events at university
+    - find events for new students
+    - find events for international students
+    - how to get involved in university events
+#News
+#1- Scrape news 2- Send the News to the LLM 
+
+- intent: university_news
+  examples: |
+    - latest news from Northampton
+    - university announcements
+    - updates from the university
+    - what's new at Northampton
+    - recent developments at the university
+    - news about university events
+    - news about university facilities
+    - news about scholarships
+    - news about faculty achievements
+    - press releases from Northampton
+    - university newsletter
+    - news articles about Northampton
+    - media coverage of the university
+    - university news highlights
+    - top stories from Northampton
+    - breaking news from the university
+    - news about student achievements
+    - news about research breakthroughs
+    - news about community engagement
+    - news about international partnerships
+    - news about campus improvements
+    - news about new programs and courses
+    - news about alumni success stories
+    - news about industry collaborations
+    - news about rankings and awards
+    - news about upcoming changes at the university
+
+#Scholarships
+
+#1- Scrape the scholarships 2- Send the scholarships to the LLM 
+
+- intent: university_scholarships
+  examples: |
+    - scholarships at Northampton
+    - financial aid for students
+    - how to apply for scholarships
+    - scholarship opportunities
+    - funding for international students
+    - GREAT Scholarships
+    - postgraduate scholarships
+    - alumni scholarships
+    - course-specific scholarships
+    - research degree scholarships
+    - UON International Scholarship
+    - tuition fee reduction
+    - bursaries and awards
+    - undergraduate scholarships
+    - mature student scholarships
+    - scholarships for care leavers
+    - scholarships for low income families
+    - fully funded accommodation
+    - eligibility criteria for scholarships
+    - scholarship application process
+    - deadlines for scholarship applications
+    - benefits of receiving a scholarship
+    - types of scholarships available
+    - scholarships for specific programs
+    - scholarships for academic excellence
+    - need-based scholarships
+    - merit-based scholarships
+    - external scholarship opportunities
+
+#Facilities
+#1- Scrape the failities 2- Send them to the LLM
+
+- intent: university_facilities
+  examples: |
+    - facilities available at Northampton
+    - campus amenities
+    - student services and facilities
+    - sports facilities at the university
+    - library resources and facilities
+    - computing and IT facilities
+    - laboratory facilities
+    - research facilities and equipment
+    - study spaces on campus
+    - dining options and facilities
+    - accommodation facilities
+    - health and wellness facilities
+    - recreational facilities
+    - parking facilities
+    - transportation facilities
+    - accessibility facilities
+    - childcare facilities
+    - prayer and meditation facilities
+    - event and conference facilities
+    - facilities for student organizations
+    - facilities for arts and culture
+    - facilities for community engagement
+    - facilities for entrepreneurship and innovation
+    - facilities for career development
+    - facilities for international students
+    - facilities for graduate students
+    - facilities for distance learning
+    - facilities for continuing education
+
+
+#Faculty 
+# 1- Scrape their facilities 2- Send tghem to the LLM 
+
+- intent: university_faculty
+  examples: |
+    - How can I contact Professor John Smith?
+    - What is Dr. Jane Doe's email address?
+    - How do I reach out to Professor Michael Johnson?
+    - Can you provide me with Dr. Emily Brown's phone number?
+    - I need to get in touch with Professor David Wilson. How can I do that?
+    - What are Dr. Sarah Davis's office hours?
+    - Where is Professor Robert Taylor's office located?
+    - I want to schedule an appointment with Dr. Jennifer Anderson. How should I proceed?
+    - Is Professor William Martinez available for a meeting?
+    - Can you give me Dr. Elizabeth Thompson's contact details?
+    - I have a question for Professor Christopher Harris. How can I reach him?
+    - What is the best way to contact Dr. Olivia Martin?
+    - I need to discuss something with Professor Daniel Rodriguez. How can I get in touch?
+    - Can you provide me with Dr. Sophia Hernandez's email or phone number?
+    - I want to send an email to Professor Matthew Lopez. What is his email address?
+    - How can I arrange a meeting with Dr. Isabella Gonzalez?
+    - I have a question about a course taught by Professor Ethan Lee. How can I contact him?
+    - Can you help me find Dr. Ava Perez's contact information?
+    - I need to reach out to Professor Liam Nguyen regarding a research project. How can I do that?
+    - What is Dr. Mia Patel's preferred method of contact?
+
+
+
 - intent: ask_accommodation
   examples: |
     - Tell me about accommodations
@@ -220,6 +459,9 @@ nlu:
     - Can you share specifics about accommodation alternatives that are not managed by the uni?
     - Please give me details on living arrangements that are external to the university's facilities.
     - okay tell me about private accoms
+
+
+    
 - intent: ask_student_life
   examples: |
     - What is student life like at the University of Northampton?
@@ -255,168 +497,26 @@ nlu:
     - Is there any support for visa applications?
 - intent: ask_module_info
   examples: |
-    - Can you tell me about the [Fundamentals of AI](module) module?
-    - What will I learn in [Applied Machine Learning](module)?
-    - How is the [Robotics](module) module assessed?
-    - What are the learning outcomes for [Knowledge Representation and Reasoning](module)?
+    
 - intent: modulename_or_coursename
   examples: |
     - [Relational Databases](module_name)
     - Module name is [Relational databases](module_name)
     - Module name is [Artificial Intelligence Fundamentals](module_name)
-- intent: ask_general_question
-  examples: |
-    - How do I contact the admissions team?
-    - When does the academic year start?
-    - Are there any scholarships available for AI students?
-    - What careers can I pursue with an AI degree?
-- intent: thank
-  examples: |
-    - Thanks
-    - Thank you
-    - That's helpful
-    - Appreciate the information
-    - Cheers
-    - Much obliged
-    - I appreciate that
-    - Thank you kindly
-    - Gratitude
-    - Many thanks
-    - I'm grateful
-    - Thankful
-    - Bless you
-    - Merci
-    - Gracias
-    - Arigatou
-    - Mahalo
-    - Danke
-    - Grazie
-- intent: goodbye
-  examples: |
-    - Bye
-    - Goodbye
-    - See you later
-    - Take care
-    - Later
-    - Adios
-    - Sayonara
-    - Ciao
-    - Hasta la vista
-    - Peace out
-    - Catch you later
-    - Laters
-    - Toodle-oo
-    - Fare thee well
-    - Godspeed
-    - Cheerio
-- intent: bot_health
-  examples: |
-    - how are you?
-    - are you doing well
-    - you well
-    - i hope you well?
-    - well are you
-    - well you?
-    - You well
-    - Well You
-    - Hows everything
-    - How is your day
-    - How do you do
-    - How have you been
-    - What's up, my friend?
-    - How's it going today?
-    - Everything alright with you?
-    - I hope you're having a good one.
-    - Doing okay over there?
-    - How's your day been so far?
-    - Checking in to see how you're doing.
-    - Hope all is well on your end.
-    - Wondering how you're feeling today.
-    - Just wanted to see how you're holding up.
-    - I trust you're in good spirits today.
-    - Curious to know how your day is going.
-    - Hoping you're having a wonderful day.
-    - I'd love to hear how you're faring today.
-    - Inquiring about your current state of being.
-    - Wanted to ask how you're doing at the moment.
-    - I'm curious to learn about your current wellbeing.
-    - I'm interested in knowing how you're feeling right now.
-    - I'd be glad to hear an update on how you're doing today.
-    - I'm wondering if you could share how you're doing at the moment.
-    - how are you
-    - tell me about you
-- intent: user_postive_health
-  examples: |
-    - great
-    - I am good thanks
-    - happy
-    - very happy
-    - i am so happy
-    - perfect thanks
-    - I am Perfect
-    - very good
-    - good thanks
-    - doing well also thank you
-    - doing well
-    - feeling good
-    - Fantastic
-    - I'm in high spirits
-    - Couldn't be better
-    - Absolutely wonderful
-    - Over the moon
-    - Thrilled
-    - Ecstatic
-    - Delighted
-    - Cheerful
-    - Chipper
-    - Buoyant
-    - Radiant
-    - Gleeful
-    - Euphoric
-    - Elated
-    - Joyful
-    - Blissful
-    - Exuberant
-    - Jubilant
-    - Beaming
-    - [okay i am]( good) good thanks
-    - i am good thanks
-- intent: user_negtive_health
-  examples: |
-    - not well
-    - i am sad
-    - sad
-    - im kinda sad
-    - not good
-    - very bad
-    - bad
-    - sady
-    - upset
-    - I am upset
-    - not happy
-    - feeling down
-    - Unwell
-    - Downcast
-    - Gloomy
-    - A bit down
-    - Not doing so great
-    - Quite poor
-    - Dreadful
-    - Morose
-    - Dismal
-    - Dejected
-    - Melancholic
-    - Despondent
-    - Forlorn
-    - Doleful
-    - Crestfallen
-    - Disheartened
-    - Dispirited
-    - Woeful
-    - Sorrowful
-    - Inconsolable
+
+
 - intent: about_ai_course
   examples: |
+    - what can I expect with this course
+    - what can i achieve
+    - what have people studying AI achieved
+    - AI achieved
+    - students success
+    - what have students done
+    - success at Northampton
+    - success with ai
+    - ai course success
+    - success students
     - class
     - tell me about ai northampton
     - ai course
@@ -478,9 +578,7 @@ nlu:
     - I'm curious to understand the complete set of educational requirements including any subject-specific prerequisites and overall academic performance standards that applicants must meet to gain admission into the Artificial Intelligence bachelor's program at the University of Northampton.
     - Could you provide me with a comprehensive breakdown of the exact academic qualifications prior educational background and grade criteria that students need to demonstrate in order to be accepted into the BSc Artificial Intelligence course at the University of Northampton?
     - what will i learn if i study ai at nothampton
-    - tell me what i will learn if i study ai at norhampton
-- intent: what_need_for_ai
-  examples: |
+    - tell me what i will learn if i study ai at norhampton]
     - what do i need to study Ai
     - study ai
     - grades needed to study ai
@@ -496,8 +594,6 @@ nlu:
     - Requirements
     - what will i learn if i study ai at nothampton
     - study AI
-- intent: genarl_ai_ask
-  examples: |
     - tell me what ai is
     - what is ai
     - what is artificial intelligence
@@ -509,67 +605,7 @@ nlu:
     - tell me ai
     - ai is
     - is ai
-- intent: jobs_internships
-  examples: |
-    - jobs
-    - internships
-    - intern
-    - tell me about internships
-    - where can i find internships for ai
-    - ai internships
-    - tech internships
-    - internships?
-    - i need internship
-    - find internship
-    - summer internships
-    - paid internships
-    - remote internships
-    - internship opportunities near me
-    - help find internship
-    - tell me about park ave
-    - what can you tell me about ineternships
-- intent: jobs_placement
-  examples: |
-    - tell me about placement
-    - placement year
-    - i need a placement
-    - what is a placement
-    - where can i find placement for ai
-    - does Northampton offer a placement year
-    - placement?
-    - internships?
-    - i need placement
-    - find placement
-    - paid placement
-    - remote placement?
-    - Placement opportunities near me
-    - help find placement
-- intent: securing_internship_placement
-  examples: |
-    - Tell me some resume tips
-    - how do i secure placement
-    - how do i secure an internship
-    - tips for internship
-    - tips for placement
-    - placement tips
-    - internship tips
-    - help secure internship
-    - help secure placement
-    - help internship
-    - help placement
-    - how to apply for internships
-    - how to apply for placement
-    - how to get an internship
-    - how to get an placement
-- intent: job_pros
-  examples: |
-    - what can I expect with this course
-    - what can i achieve
-    - what have people studying AI achieved
-    - AI achieved
-    - students success
-    - what have students done
-    - success at Northampton
-    - success with ai
-    - ai course success
-    - success students
+    - Can you tell me about the [Fundamentals of AI](module) module?
+    - What will I learn in [Applied Machine Learning](module)?
+    - How is the [Robotics](module) module assessed?
+    - What are the learning outcomes for [Knowledge Representation and Reasoning](module)?
