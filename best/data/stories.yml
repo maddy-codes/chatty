@@ -1,73 +1,53 @@
-version: "2.0"
+version: "3.1"
 stories:
 
+# custom actions
 
-- story: ask about student life
+- story: give new internships 
+  steps: 
+  - intent: jobs_internships #user asks questions about internshipos 
+  - action: scrape_internships # gives new internships 
+
+- story: answer questions about events  
+  steps: 
+  - intent: university_events #user asks questions about events 
+  - action: scrape_events # gives new events 
+
+- story: answer questions about societies  
+  steps: 
+  - intent: university_societies #user asks questions about events 
+  - action: scrape_societies # gives new events 
+
+- story: answer questions about news  
+  steps: 
+  - intent: university_news #user asks questions about news 
+  - action: scrape_news # gives new news 
+
+- story: answer contact questions
+  steps: 
+  - intent: university_faculty
+  - action: contact_people
+
+
+# non custom actions
+
+- story: give me timetable
   steps:
-  - intent: ask_student_life
-  - action: utter_student_life_info
-  - action: utter_ask_more_questions
+  - intent: ask_timetable
+  - action: tell_link
 
-- story: ask about visa requirements
+
+- story: question about scholarshgip
   steps:
-  - intent: ask_visa_requirements
-  - action: utter_visa_requirements
-  - action: utter_ask_more_questions
+  - intent: ask_scholarship
+  - action: utter_scholarship
 
+- story: question about northampton general
+  steps: 
+  - intent: northampton_general
+  - action: utter_northampton_general
 
-- story: ask general question
+- story: question about ai course
   steps:
-  - intent: ask_general_question
-  - action: action_general_question
-  - action: utter_ask_more_questions
-
-
-- story: thank and goodbye
-  steps:
-  - intent: thank
-  - action: utter_youre_welcome
-  - intent: goodbye
-  - action: utter_goodbye
-
-  #add accom coversation next 
-
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: greet
-  - action: utter_greet
-
-
-- story: story_of_timetable
-  steps:
-  - intent: time_table_ask
-  - action: utter_student_number
-  - intent: time_table_student_id
-  - action: action_tell_time
-
-- story: interactive_story_3
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_accommodation
-  - action: utter_ask_accommodation
-  - intent: bot_health
-  - action: utter_Iam_well
-  - intent: bot_health
-  - action: utter_Iam_well
-  - intent: user_postive_health
-  - action: utter_user_pos_res
-  - intent: jobs_internships
-  - action: utter_internships
-  - action: action_get_internships
-  - intent: what_need_for_ai
-  - action: utter_ai_prerequisites
-
-- story: interactive_story_1
-  steps:
-  - intent: genarl_ai_ask
-  - action: utter_what_is_ai
-  - intent: what_need_for_ai
-  - action: utter_ai_prerequisites
+  - intent: about_ai_course
+  - action: utter_ai_course

@@ -1,91 +1,43 @@
-version: '2.0'
+version: '3.1'
 intents:
-- about_ai_course
-- ask_accommodation
-- ask_general_question
-- ask_module_info
-- ask_student_life
-- ask_visa_requirements
-- bot_challenge
-- bot_health
-- genarl_ai_ask
-- goodbye
-- greet
-- internships_all
-- jobs_internships
-- jobs_placement
-- modulename_or_coursename
-- positive_confirmation
-- securing_internship_placement
-- thank
-- user_negtive_health
-- user_postive_health
-- what_can_i_do_wit_ai
-- what_need_for_ai
-entities:
-- ' good'
-- module
-- module_name
-- module_code
-slots:
-  module:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: module
+  - time_table_ask
+  - jobs_internships
+  - university_societies
+  - university_events
+  - university_news
+  - university_faculty
+  - university_scholarships
+  - ask_accommodation
+  - ask_international
+  - about_ai_course
 responses:
-  utter_greet:
-  - text: Hello! I'm the University of Northampton's AI course assistant. How can I help you today?
-  utter_student_life_info:
-  - text: Student life at the University of Northampton is vibrant and engaging. The Students' Union organizes various events and activities throughout the year. There are also numerous sports clubs and societies you can join to meet like-minded people. Northampton itself is a welcoming town with parks, museums, and cultural attractions to explore.
-  utter_visa_requirements:
-  - text: International students from outside the UK or Ireland may need a visa to study at the University of Northampton. The type of visa depends on your country of origin and the length of your course. You can apply for a visa up to 6 months before the start of your course, and the University provides guidance and support for visa applications.
-  utter_ask_more_questions:
-  - text: Do you have any other questions about the AI course or studying at the University of Northampton?
-  utter_youre_welcome:
-  - text: You're welcome! It's my pleasure to help. Pleas feel free to ask me another question
-  utter_goodbye:
-  - text: Goodbye! If you have any more questions, feel free to ask. Best of luck with your AI studies!
-  utter_iamabot:
-  - text: I am an AI chatbot designed to provide information about the University of Northampton's artificial intelligence program. How else can I assist you today?
-  utter_ask_year:
-  - text: For asking about the following information, can you please confirm me your year of study?
   utter_ask_accommodation:
   - text: The University of Northampton provides over 2,250 fully-furnished rooms across Waterside campus, St Johns Halls (town centre), and Scholars Green Student Village (4.5 miles from campus with free Stagecoach bus service). Self-catered accommodation includes standard single/twin, en-suite, townhouses, and studios. All have utilities, WiFi, insurance, 24/7 security, CCTV, onsite police, and residential life support. Kitchens are equipped with microwaves, cookers, fridge/freezers, kettles, toasters, irons, ironing boards, vacuum cleaners, dustpan and brushes, mops and buckets. Students bring bedding, cooking/eating utensils, clothing, towels, and PAT-tested appliances (TVs need a licence). Disabled students are prioritized and accommodated. Students stay during breaks. Limited parking for £150/semester (cars) or £22.50/semester (motorcycles). Applications are first-come, first-served with no deposit for September 2024. Single-sex, mature, quiet, alcohol-free and LGBTQ+ flats available on request. Friends/relatives can apply to live together. Open days and online tours offered. FAQs cover prohibited items, insurance, inventories, room changes, homesickness, and cancellation. Contact the Accommodation team at accommodation@northampton.ac.uk or +44 (0)1604 892482. Main University number +44 (0)1604 735500. Waterside campus address. University Drive, Northampton, NN1 5PH, UK.
-  utter_Iam_well:
-  - text: Great! but I must say I am just a chatbot created by some students who studied AI and data science at Northampton University of which Kelvin is my favourite . How are you doing?
-  utter_user_neg_res:
-  - text: oh, sorry to hear that!. please feel free to ask me a question relating to Northampton and I will try my best answer and maybe that wil cheer you up
-  utter_user_pos_res:
-  - text: I am glad to hear that! please feel free to ask me a question relating to Northampton and I will try my best answer to keep that mood up!
-  utter_ai_in_northampton:
-  - text: 'Here is a quick overview of what you can expect if you decide to pursue  AI at Northampton - AI and Data Science equips students with the knowledge and practical skills to pursue careers in fields like machine learning, solution architecture, project management, and AI research. The program covers the fundamentals and applications of data science and machine learning. Year 1 In the first year, students take common computer science modules to build a strong foundation, as well as a specialized module tailored for the AI and Data Science program. Year 2 The second year focuses on more specialized modules such as Introduction to AI, Cloud Computing and Big Data, and Relational Databases. Students also complete a group project to develop an innovative AI solution for a real-world challenge. Year 3 In the final year, students acquire comprehensive AI skills through advanced modules like Advanced AI and Applications, Natural Language Processing, Modern Databases, and Media Technology. They also have the opportunity to complete an independent dissertation on a specialist AI topic. for further information on the Ai course at Northampton please visite this link or copy and paste it into your url (https://www.northampton.ac.uk/courses/artificial-intelligence-and-data-science-bsc-hons/#course_content) '
-  utter_ai_prerequisites:
-  - text: 'As of current, these are the requirements needed to study Ai and Data Science at Northampton University- A typical offer for the BSc Data Science and Artificial Intelligence degree is: BCC at A-Level or, DMM at BTEC/Cambridge Technical or, Pass (C and above) at T Level Applicants will be expected to have achieved GCSE Mathematics (or equivalent) at grade C/4 or above. We welcome international applicants and applications from students with a range of non-traditional educational or professional qualifications, as well as applications from students with a mix of A levels and BTEC/Cambridge Technical qualifications. Integrated Foundation Year (IFY) Entry Requirements Admission to this foundation course is DEE at A Level or, MPP at BTEC or, Pass (D or E) at T Level However, we would also like to hear from you if you have professional or industry experience instead, a range of other qualifications or self-developed subject knowledge that relates to the course you wish to study. English Language Requirements All International and EU students applying for a course with us must meet the following minimum English language requirements IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands for study at undergraduate level I would recommend keeping an eye on the UON website incase the change. (https://www.northampton.ac.uk/courses/artificial-intelligence-and-data-science-bsc-hons/#course_content)'
-  utter_what_is_ai:
-  - text: AI, or Artificial Intelligence, is technology that allows computers and machines to perform tasks that would normally require human intelligence. This includes things like recognizing patterns, learning from data, making decisions, and even being creative. The key idea behind AI is to create systems that can think and learn in a way that mimics the human brain. This is done by feeding large amounts of data into complex algorithms and neural networks, which allow the AI to identify patterns and make predictions. Some common examples of AI in use today include virtual assistants like Siri or Alexa, self-driving cars, and AI-powered chatbots and content generators. As the technology continues to advance, the applications of AI are becoming more and more widespread across industries. The ultimate goal of AI research is to create general AI - systems that can match or exceed human-level intelligence and problem-solving abilities. However, this is still largely theoretical, and most current AI is focused on narrow, specialized tasks rather than broad, human-like intelligence. In summary, AI is the technology that allows machines to perform intelligent tasks, with the aim of replicating and even surpassing human cognitive abilities. It's a rapidly evolving field with exciting real-world applications. Northampton is a great place to learn more about AI on a theoretical and practical level. The students that created me actually studied AI at Northampton!
-  utter_internships:
-  - text: Internships are valuable opportunities, they are a great way of preparing for future jobs and getting some relevant experience on your CV, they typically take place in summer and last around 3 months. The professors on the Ai course do a great job of giving students internship opportunities as they are well connected with some companies local to northampton. You can internship opportunities on job boards like Bright network , and by networking with professionals in your field of interest on LinkedIn ( https://www.linkedin.com/login  https://www.brightnetwork.co.uk/internships/ ).
-  utter_placement:
-  - text: Placements are valuable opportunities, they are a great way of preparing for future jobs and getting some relevant experience on your CV, they typically start in september and last around 1 year. The professors on the Ai course do a great job of giving students placement opportunities as they are well connected with some companies local to northampton. You can internship opportunities on job boards like Bright network , and by networking with professionals in your field of interest on LinkedIn ( https://www.linkedin.com/login   https://www.brightnetwork.co.uk/industrial-placements/ ).
-  utter_job_help:
-  - text: When it comes to securing internships or placements I would recommend these tips- Start early and apply well in advance. Leverage your network of professors, counselors, and professionals. Tailor your application materials to each opportunity. Highlight relevant skills and experience. Prepare thoroughly for interviews. Follow up and express gratitude. Explore online job boards and networking platforms. Please check out this link as it highlights some of the things you can do to best prepare for an internship or placement opportunities ( https://www.northampton.ac.uk/blog/navigating-the-path-to-success-a-guide-to-securing-placements-and-internships/ )
-  utter_job_proc:
-  - text: There are a lot of job prospects if you chose to study AI and data science at northampton. Here are some of things students studying AI at Northampton have achieved with their course. Jatin - Secured a placement year at a top pharm Aria - received an offer at Qumin Kelvin - Secured an internship at in Technology at a Global investment bank Please look here for further information on how students are finding their course and their achievements ( https://uonai.blog/  )
-  utter_student_number:
-  - text: Please wirte your student number in [exactly 8 digits].
+  tell_link:
+  - text: Please follow this link (https://mytimetable.northampton.ac.uk/) and login, for securiy reasons univresity does not allow us to access timetable without login in.  
+  utter_scholarship:
+  - text: The University of Northampton offers generous merit-based scholarships for international and EU students, providing up to a 30% tuition fee reduction for all years of study (excluding placements) for full-time undergraduate and postgraduate taught courses. Graduates of the university who studied on campus in the UK and achieved a second class degree are eligible for a 30% fee discount on Master's courses. The university participates in UK and overseas government scholarship schemes like Chevening and Commonwealth Scholarships. For September 2023, two GREAT Scholarships are available for nationals of Brunei and Sri Lanka.
+  utter_northampton_general:
+  - text: Northampton, a vibrant town in the East Midlands of England, offers a rich blend of historical charm and modern conveniences. Heres a concise overview Pubs The town boasts a lively pub scene. Notable spots include The Malt Shovel Tavern Known for its extensive beer selection and vibrant atmosphere.The Wig & Pen Offers a cozy setting, perfect for relaxed evenings.The Cordwainer Celebrated for its affordability and central location.The Cromwell Cottage and The Fox & Hounds Both offer a premium country pub experience with excellent food and drinks.Transport Northampton provides robust bus services managed by West Northamptonshire Council, with the Northampton Buzz Card offering unlimited travel. Eco-friendly travel options like e-scooters and e-bikes are also available.Residential Areas:Abington Features beautiful Victorian homes near Abington Park.Kingsthorpe Mixes historic charm with modern amenities.Wootton and Duston Known for their tranquility, good schools, and family-friendly environments.Grange Park Offers a variety of properties close to schools and parks.Lifestyle and Amenities:Shopping and Dining The market square, surrounded by the Grosvenor Centre and Weston Favell Shopping Centre, offers numerous retail and dining options.Cultural Sites Includes Delapré Abbey and several museums.Leisure Activities The town has over 170 parks and multiple leisure centers.Education and Health Northampton is equipped with a mix of public and private schools and comprehensive healthcare services. Overall, Northampton is an ideal place for those seeking a balanced urban and rural lifestyle, with ample amenities, cultural sites, and efficient public transport
+  utter_ai_course: 
+  - text: AI course is great
+entities:
+  - student_id
+
+
 actions:
-- utter_what_is_ai
-- utter_greet
-- utter_internships
-- utter_Iam_well
-- utter_user_pos_res
-- utter_ai_in_northampton
 - utter_ask_accommodation
-- action_module_info
-- action_general_question
-- action_tell_time
-- action_get_internships
+- utter_ask_student_id
+- scrape_whole_calendar
+- scrape_internships
+- scrape_events
+- scrape_societies
+- scrape_news
+- utter_ai_course
+- tell_link
+- contact_people
+- utter_northampton_general
+- utter_scholarship
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
