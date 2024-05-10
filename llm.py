@@ -25,3 +25,4 @@ def make_questions(data):
     return completion.choices[0].message.content
 
 
+    
