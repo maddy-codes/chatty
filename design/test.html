@@ -229,7 +229,7 @@
 
                 messageElement.innerHTML = `
                     
-                <img src="logo.png" class="h-14 w-14 mr-2 rounded-full">
+                <img  src="logo.png" class=" chamurai h-14 w-14 mr-2 rounded-full">
                     <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg  bg-white/30">
                         <p class="typing-effect font-sans"></p>
                     </div>
@@ -296,10 +296,30 @@
             displayMessage(message, 'bot');
             remove_parent(class_name = 'feedback_que');
         }
+
+
+        ///Make a function that takes the picture and replace it with animation URL 
+        function replaceImageWithGif() {
+                var img_eles = document.getElementsByClassName('chamurai'); //getting the img element
+                console.log(img_eles);
+                for(var i=0;i<img_eles.length;i++){
+                    // Set GIF attributes
+                    console.log(i);
+                    var img_ele = img_eles[i];
+                    img_ele.src = './animation.gif'; // Set the source of the img to the GIF URL=
+                }
+                
+        }
+
+
+
+
+
         async function sendMessage(message) {
             try {
                 typingBuffer()
                 QUESTION_ASKED = message;
+                replaceImageWithGif() //give url
                 const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
                     method: 'POST',
                     headers: {
@@ -361,7 +381,7 @@
 
                 messageElement.innerHTML = `
                     
-                <img src="logo.png" class="h-14 w-14 mr-2 rounded-full">
+                <img src="logo.png" class="chamuri h-14 w-14 mr-2 rounded-full">
                     <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg ">
                         <p class="typing-effect font-sans"></p>
                         ${htm_passed}
