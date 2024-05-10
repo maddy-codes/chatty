@@ -1,9 +1,26 @@
-Please start your server using 
+Open two terminals
 
-Rasa Core Server : - 
-    rasa run --enable-api --cors '*' -p 5005 
+# In one of them do this:
+
+ 1- python -m venv env   
+  2- Set-ExecutionPolicy Unrestricted -Scope Process
+  3- env/Scripts/Activate
+  4- pip install -r requirements.txt
+  5- cd best
 Rasa Actions Server : - 
     rasa run actions
+<<<<<<< HEAD
 Set-ExecutionPolicy Unrestricted -Scope Process
   1- python -m venv env   
   2- env/Scripts/Activate.bat
+=======
+
+In another terminal do this: 
+env/Scripts/Activate
+cd best (if its not in best)
+Rasa Core Server : - 
+    rasa run --enable-api --cors '*' -p 5005 
+
+
+ 
+>>>>>>> a48e55ea539641ef0f12017a1ea2c1f1db6724ed
