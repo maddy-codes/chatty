@@ -24,6 +24,13 @@ app = Flask(__name__)
 #
 
 
-@app.route("/")
+@app.route("/data/insert", methods=['POST'])
 def hello_world():
-    return render_template('test.html')
+    try:
+        #cursor.execute("INSERT INTO logging_table (log_message) VALUES ('Hello World')")
+        #cnxn.commit()
+        pyodbc.connect('DRIVER=SQL SERVER;SERVER=34.105.250.198;DATABASE=logging_database;UID=sqlserver;PWD=csy2088;Encrypt=yes;TrustServerCertificate=yes;')
+        print("jajajajajajaja")
+        return "Data Inserted"
+    except Exception as e:
+        return f'NOOOOOOOOOOOOOOO\n{e}'

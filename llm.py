@@ -23,6 +23,3 @@ def make_questions(data):
         temperature=0.1,
     )
     return completion.choices[0].message.content
-
-
-    

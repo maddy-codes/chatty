@@ -9,11 +9,9 @@ Open two terminals
   5- cd best
 Rasa Actions Server : - 
     rasa run actions
-<<<<<<< HEAD
-Set-ExecutionPolicy Unrestricted -Scope Process
+  Set-ExecutionPolicy Unrestricted -Scope Process
   1- python -m venv env   
   2- env/Scripts/Activate.bat
-=======
 
 In another terminal do this: 
 env/Scripts/Activate
@@ -22,5 +20,4 @@ Rasa Core Server : -
     rasa run --enable-api --cors '*' -p 5005 
 
 
- 
->>>>>>> a48e55ea539641ef0f12017a1ea2c1f1db6724ed
+
